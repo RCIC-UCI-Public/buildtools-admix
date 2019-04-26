@@ -1,0 +1,24 @@
+# this is the java7 module for the system openjdk-1.7.0 
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: java8 openjdk module 
+  name: java
+  version: "1.8.0"
+  description: Environment module of openjdk java version {{ version }}
+  pkgname: "java8_{{version}}-module"
+  extension:
+  root: "{{ pkg_defaults.module.path }}"
+  no_src_dir: true
+  module:
+    name: "{{ version }}"
+    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    prepend_path:
+      - PATH /usr/lib/jvm/jre-{{ version }}/bin
+      - PATH /usr/lib/jvm/java-{{ version }}/bin
+    setenv: 
+      - JAVA_HOME /usr/lib/jvm/jre-{{ version }}
+    logger:  exec /bin/logger -p local6.notice - t module-hpc $env(USER) {{ name }}/{{ version }}
+
+  requires:
+    - "{{ name }}-{{ version }}-openjdk"
+    - rcic-module-support
