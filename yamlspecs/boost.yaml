@@ -1,8 +1,10 @@
 ---
 - package: boost 
   name: boost 
-  version: "1.70.0"
-  version_enc: "1_70_0"
+  version: "1.66.0"
+  version_enc: "1_66_0"
+  compiler: gcc
+  compiler_version: "6.5.0"
   extension: tar.gz
   vendor_source: https://dl.bintray.com/boostorg/release/{{ version }}/source/boost_{{version_enc}}.tar.gz
   description: >
@@ -11,14 +13,14 @@
     intended to be widely useful, and usable across a broad spectrum of applications. The Boost license 
     encourages both commercial and non-commercial use and does not require attribution for binary use. \\n
     BOOST_HOME={{ root }}
-  pkgname: "{{ name }}_{{ version }}"
+  pkgname: "{{ name }}_{{ version }}_{{ compiler }}_{{ compiler_version }}"
   src_tarball: "{{ name }}_{{ version_enc }}.{{ extension }}"
   src_dir: "{{ name }}_{{ version_enc }}"
-  root: "{{ pkg_defaults.app_path }}/{{ name }}/{{ version }}"
+  root: "{{ pkg_defaults.app_path }}/{{ name }}/{{ version }}/{{compiler}}/{{compiler_version }}"
   build:
     configure: ./bootstrap.sh 
     configure_args:
-    modules: 
+    modules: "{{compiler}}/{{ compiler_version }}"
     pkgmake: ./b2 
     target: 
   install:
@@ -26,3 +28,4 @@
       ./b2 --prefix=$(ROOT)/{{ root }} install
   files:
     -  "{{ root }}"
+  rpm: !include rpm.extras.yaml
