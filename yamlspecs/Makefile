@@ -4,3 +4,8 @@
 # be able to use this.
 
 include $(YAML2RPM_HOME)/sys/Makefile
+openmpi-module.yaml: openmpi-module.yaml.in
+	sh copympi-module.sh > $@	
+
+clean:
+	- /bin/rm openmpi-module.yaml

@@ -1,0 +1,15 @@
+# This "copies" the system openmpi module file  into a standard
+# standard naming convention 
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: openmpi module 
+  name: openmpi 
+  pkgname: "{{ name }}_{{version}}-module"
+  prefix: /usr
+  description: |
+    Module file for system defined GCC version {{ version }}.  Changes with major OS version changes
+  root: "{{ pkg_defaults.module.path }}"
+  no_src_dir: True
+  extension: 
+  requires:
+    - rcic-module-support

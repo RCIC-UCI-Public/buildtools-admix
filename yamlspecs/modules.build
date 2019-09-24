@@ -1,8 +1,8 @@
 cmake
+gcc-module
 java7-module
 java8-module
 java11-module
 intel-tbb
 intel-tbb-module
-boost
-boost-module
+openmpi-module
