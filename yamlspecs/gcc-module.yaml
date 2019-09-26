@@ -1,0 +1,41 @@
+# Builds the module for the system-defined gcc. 
+# This is a convenience modules so that we can build other pieces of
+# software with multiple compilers and system gcc being one of them
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: GCC Module
+  name: gcc
+  version:  "4.8.5"
+  pkgname: "{{ name }}_{{version}}-module"
+  prefix: /usr
+  description: |
+    Module file for system defined GCC version {{ version }}.  Changes with major OS version changes
+  root: "{{ pkg_defaults.module.path }}"
+  no_src_dir: True
+  extension: 
+
+  ## Define the key components of the environment module
+  module:
+    name: "{{ version }}"
+    path: "{{root}}/{{ name }}"
+    setenv:
+      - GCC_INSTALL_PREFIX  {{ prefix }}
+      - CPP  {{ prefix }}/bin/cpp
+      - CC  {{ prefix }}/bin/gcc
+      - CXX  {{ prefix }}/bin/g++
+      - OBJC  {{ prefix }}/bin/gcc
+      - OBJCXX  {{ prefix }}/bin/g++
+      - FC  {{ prefix }}/bin/gfortran
+      - F77  {{ prefix }}/bin/gfortran
+      - F90  {{ prefix }}/bin/gfortran
+
+    prepend_path:
+      - "{{ pkg_defaults.module.prepend_path }}"
+      - -d " " LDFLAGS "-Wl,-rpath,{{ prefix }}/lib" 
+      - -d " " LDFLAGS "-L{{ prefix }}/lib" 
+      - LD_LIBRARY_PATH {{ prefix }}/lib
+      - LD_LIBRARY_PATH {{ prefix }}/lib/gcc/x86_64-redhat-linux/{{ version }}
+
+  requires:
+    - "{{ name }}"
+    - rcic-module-support
