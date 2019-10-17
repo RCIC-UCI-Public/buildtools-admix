@@ -1,0 +1,24 @@
+---
+- package: swig 
+  category: tools
+  name: swig
+  version: 4.0.1
+  extension: tar.gz
+  vendor_source: http://prdownloads.sourceforge.net/swig/{{name}}-{{version}}.{{extension}}
+
+  description: |
+    SWIG is an interface compiler that connects programs written in C and C++ with scripting
+    languages such as Perl, Python, Ruby, and Tcl. It works by taking the declarations found
+    in C/C++ header files and using them to generate the wrapper code that scripting languages
+    need to access the underlying C/C++ code. 
+    
+  pkgname: foundation-{{ name }}_{{version}}
+  root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
+  build:
+    configure: ./configure --prefix={{root}} 
+    modules: 
+    target: 
+  install:
+    makeinstall: $(MAKE) DESTDIR=$(ROOT) install
+  files:
+    -  "{{ root }}"
