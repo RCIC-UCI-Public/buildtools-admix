@@ -1,0 +1,17 @@
+# Builds the module for cmake. It first includes all the definitions
+# for the cmake build and then overwrites specific keys
+!include cmake.yaml
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: cmake Module
+  pkgname: "foundation-{{ name }}_{{version}}-module"
+  no_src_dir: True
+  src_tarball: none
+  module:
+    name: "{{ version }}"
+    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    prepend_path:
+      - "{{ pkg_defaults.module.prepend_path }}"
+  requires:
+    - "foundation-{{ name }}_{{ version }}"
+    - rcic-module-support
