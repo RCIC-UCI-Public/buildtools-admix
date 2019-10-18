@@ -13,3 +13,7 @@ git
 git-module
 swig
 swig-module
+tcl
+tcl-module
+tk
+tk-module
