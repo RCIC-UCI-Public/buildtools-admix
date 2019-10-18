@@ -1,4 +1,7 @@
 cmake
+cmake-module
+boost
+boost-module
 gcc-module
 java7-module
 java8-module
@@ -6,3 +9,7 @@ java11-module
 intel-tbb
 intel-tbb-module
 openmpi-module
+git
+git-module
+swig
+swig-module
