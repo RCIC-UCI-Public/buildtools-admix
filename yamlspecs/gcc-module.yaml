@@ -4,12 +4,13 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: GCC Module
+  category: compilers
   name: gcc
   version:  "4.8.5"
   pkgname: "{{ name }}_{{version}}-module"
   prefix: /usr
   description: |
-    Module file for system defined GCC version {{ version }}.  Changes with major OS version changes
+    Module file for system defined GCC version {{ version }}. Changes with major OS version changes.
   root: "{{ pkg_defaults.module.path }}"
   no_src_dir: True
   extension: 

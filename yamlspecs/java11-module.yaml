@@ -2,6 +2,7 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: java11 openjdk module 
+  category: compilers
   name: java
   version: "11"
   description: Environment module of openjdk java version {{ version }}

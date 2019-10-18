@@ -1,5 +1,6 @@
 ---
 - package: boost 
+  category: tools
   name: boost 
   version: "1.66.0"
   version_enc: "1_66_0"
@@ -7,11 +8,12 @@
   compiler_version: "6.5.0"
   extension: tar.gz
   vendor_source: https://dl.bintray.com/boostorg/release/{{ version }}/source/boost_{{version_enc}}.tar.gz
-  description: >
-    The Boost (version {{ version }} project provides free peer-reviewed portable C++ source libraries.  
-    We emphasize libraries that work well with the C++ Standard Library. Boost libraries are 
-    intended to be widely useful, and usable across a broad spectrum of applications. The Boost license 
-    encourages both commercial and non-commercial use and does not require attribution for binary use. \\n
+  description: |
+    The Boost (version {{ version }} project provides free peer-reviewed portable C++
+    source libraries.  We emphasize libraries that work well with the C++ Standard Library.
+    Boost libraries are intended to be widely useful, and usable across a broad spectrum of
+    applications. The Boost license encourages both commercial and non-commercial use and 
+    does not require attribution for binary use. \\n
     BOOST_HOME={{ root }}
   pkgname: "{{ name }}_{{ version }}_{{ compiler }}_{{ compiler_version }}"
   src_tarball: "{{ name }}_{{ version_enc }}.{{ extension }}"

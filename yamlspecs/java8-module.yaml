@@ -2,6 +2,7 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: java8 openjdk module 
+  category: compilers
   name: java
   version: "1.8.0"
   description: Environment module of openjdk java version {{ version }}

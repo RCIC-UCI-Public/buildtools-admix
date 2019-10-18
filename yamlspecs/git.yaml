@@ -1,5 +1,6 @@
 ---
 - package: git 
+  category: tools
   name: git
   version: 2.23.0
   extension: tar.xz
@@ -7,9 +8,9 @@
   vendor_source: "{{vendorurl}}/{{name}}-{{version}}.{{extension}}"
   distman: "{{name}}-manpages-{{version}}.{{extension}}"
   distdoc: "{{name}}-htmldocs-{{version}}.{{extension}}"
-  description: >
-    Git is a free and open source, distributed version control system designed to handle 
-    everything from small to very large projects with speed and efficiency. 
+  description: |
+    Git is a free and open source, distributed version control system designed to
+    handle everything from small to very large projects with speed and efficiency. 
     
   pkgname: foundation-{{ name }}_{{version}}
   root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
