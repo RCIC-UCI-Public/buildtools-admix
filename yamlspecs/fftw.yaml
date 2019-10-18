@@ -1,0 +1,28 @@
+---
+- package: fftw 
+  category: tools
+  name: fftw
+  version: 3.3.8
+  extension: tar.gz
+  vendor_source: http://www.fftw.org/{{name}}-{{version}}.{{extension}}
+  description: |
+    FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)
+    in one or more dimensions, of arbitrary input size, and of both real and complex 
+    data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST). 
+  pkgname: foundation-{{ name }}_{{version}}
+  root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
+  build:
+    configure_args: >
+      --prefix={{root}} 
+      --enable-shared 
+      --enable-fma 
+      --enable-sse2
+      --enable-avx
+      --enable-openmp 
+      --enable-threads 
+    modules: 
+    target: 
+  install:
+    makeinstall: $(MAKE) DESTDIR=$(ROOT) install
+  files:
+    -  "{{ root }}"
