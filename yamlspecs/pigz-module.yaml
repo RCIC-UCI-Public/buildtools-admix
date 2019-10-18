@@ -1,0 +1,17 @@
+# Builds the module for pigz. It first includes all the definitions
+# for the pigz build and then overwrites specific keys
+!include pigz.yaml
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: pigz Module
+  pkgname: "{{ name }}_{{version}}-module"
+  no_src_dir: True
+  src_tarball: none
+  module:
+    name: "{{ version }}"
+    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    prepend_path:
+      - PATH {{ root }}/bin
+  requires:
+    - "{{ name }}_{{ version }}"
+    - rcic-module-support
