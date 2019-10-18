@@ -1,0 +1,17 @@
+# Build the module for curl. It first includes all the definitions
+# for the curl build and then overwrites specific keys
+!include curl.yaml
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: curl Module
+  pkgname: "foundation-{{ name }}_{{version}}-module"
+  no_src_dir: True
+  src_tarball: none
+  module:
+    name: "{{ version }}"
+    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    prepend_path:
+      - "{{ pkg_defaults.module.prepend_path }}"
+  requires:
+    - "foundation-{{ name }}_{{ version }}"
+    - rcic-module-support
