@@ -4,7 +4,7 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: GCC Module
-  category: compilers
+  category: COMPILERS
   name: gcc
   version:  "4.8.5"
   pkgname: "{{ name }}_{{version}}-module"

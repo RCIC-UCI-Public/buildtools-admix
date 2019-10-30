@@ -5,11 +5,17 @@
 - package: openmpi module 
   name: openmpi 
   pkgname: "{{ name }}_{{version}}-module"
+  category: TOOLS
   prefix: /usr
+  compiler: gcc 
+  compiler_version: "4.8.5" 
   description: |
-    Module file for system defined GCC version {{ version }}.  Changes with major OS version changes
-  root: "{{ pkg_defaults.module.path }}"
+    Module file for system defined Openmpi version {{ version }} compiled with GCC version {{ compiler_version }}.
+    Changes with major OS version changes
+  root: "{{ pkg_defaults.module.path }}/{{ name }}/{{compiler}}/{{compiler_version}}"
   no_src_dir: True
   extension: 
   requires:
     - rcic-module-support
+    - openmpi
+    - openmpi-devel

@@ -5,9 +5,14 @@
 ---
 - package: intel-tbb Module
   pkgname: "{{ name }}_{{version}}-module"
+  category: TOOLS
+  description: |
+      {{ basedescription }}
+      Environment Vars:
+          INTELTBB_HOME = {{ root }}
   module:
     name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    path: "{{ pkg_defaults.module.RCICmpath }}/{{ category }}/{{ name }}"
     prepend_path:
       - "{{ pkg_defaults.module.prepend_path }}"
     setenv:
