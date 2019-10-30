@@ -9,5 +9,6 @@ build:
   - intel-tbb
   - intel-tbb-module
   - openmpi-module
+  - setuptools
 manifest:
   - "{{ build }}" 
