@@ -1,0 +1,20 @@
+---
+bootstrap:
+system:
+   - openmpi
+build:
+   - gcc-module
+   - java7-module
+   - java8-module
+   - java11-module
+   - openmpi-module
+   - boost
+   - boost-module
+   - intel-tbb
+   - intel-tbb-module
+   - tcl
+   - tcl-module
+   - tk
+   - tk-module
+manifest:
+   - "{{ build }}"
