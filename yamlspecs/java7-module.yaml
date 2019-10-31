@@ -1,15 +1,14 @@
-# this is the java7 module for the system openjdk-1.7.0 
+# this is the java7 module for the system java-1.7.0-openjdk
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: java7 openjdk module 
   category: compilers
-  name: java
+  name: java7
   version: "1.7.0"
   description: Environment module of openjdk java version {{ version }}
-  pkgname: "java7_{{version}}-module"
+  pkgname: "{{name}}-module"
   extension:
   root: "{{ pkg_defaults.module.path }}"
-  no_src_dir: true
   module:
     name: "{{ version }}"
     path: "{{ pkg_defaults.module.path }}/{{ name }}"
@@ -19,9 +18,6 @@
     setenv: 
       - JAVA_HOME /usr/lib/jvm/jre-{{ version }}
     logger:  exec /bin/logger -p local6.notice - t module-hpc $env(USER) {{ name }}/{{ version }}
-
-  provides:
-    - "{{ name }}-module = {{ version }}"
   requires:
     - "{{ name }}-{{ version }}-openjdk"
     - rcic-module-support
