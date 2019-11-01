@@ -1,17 +1,7 @@
-# Builds the module for tk. It first includes all the definitions
-# for the tk build and then overwrites specific keys
+# Builds the module for tk.
 !include tk.yaml
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: tk Module
-  pkgname: "foundation-{{name}}_{{version}}-module"
-  no_src_dir: True
-  src_tarball: none
-  module:
-    name: "{{version}}"
-    path: "{{pkg_defaults.module.path}}/{{name}}"
-    prepend_path:
-      - "{{pkg_defaults.module.prepend_path}}"
-  requires:
-    - "foundation-{{name}}_{{version}}"
-    - rcic-module-support
+  category: TOOLS
+  foundation: "foundation-"
