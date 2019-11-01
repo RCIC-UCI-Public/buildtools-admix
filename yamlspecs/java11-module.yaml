@@ -1,13 +1,13 @@
-# this is the java11 module for the system java-11-openjdk
+# java11 module for the system java-11-openjdk
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: java11 openjdk module 
-  category: compilers
-  name: java11
+  category: COMPILERS
+  name: java
   version: "11"
+  major: "11"
   description: Environment module of openjdk java version {{ version }}
-  pkgname: "{{name}}-module"
-  extension:
+  pkgname: "{{name}}{{major}}-module"
   root: "{{ pkg_defaults.module.path }}"
   module:
     name: "{{ version }}"

@@ -1,13 +1,13 @@
-# this is the java8 module for the system java-1.8.0-openjdk
+# java8 module for the system java-1.8.0-openjdk
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: java8 openjdk module 
-  category: compilers
-  name: java8
+  category: COMPILERS
+  name: java
   version: "1.8.0"
+  major: "8"
   description: Environment module of openjdk java version {{ version }}
-  pkgname: "{{name}}-module"
-  extension:
+  pkgname: "{{name}}{{major}}-module"
   root: "{{ pkg_defaults.module.path }}"
   module:
     name: "{{ version }}"
