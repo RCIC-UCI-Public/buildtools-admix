@@ -5,9 +5,11 @@
   category: COMPILERS
   name: java
   version: "11"
-  major: "11"
+  name_ver: java11
+  versions: !include versions.yaml
+  version: "{{ versions.java11}}"
   description: Environment module of openjdk java version {{ version }}
-  pkgname: "{{name}}{{major}}-module"
+  pkgname: "{{name_ver}}-module"
   root: "{{ pkg_defaults.module.path }}"
   module:
     name: "{{ version }}"

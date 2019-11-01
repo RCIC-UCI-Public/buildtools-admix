@@ -1,7 +1,8 @@
 ---
 - package: fftw 
   name: fftw
-  version: 3.3.8
+  versions: !include versions.yaml
+  version: "{{ versions.fftw}}"
   extension: tar.gz
   vendor_source: http://www.fftw.org/{{name}}-{{version}}.{{extension}}
   description: |
