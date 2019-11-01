@@ -2,19 +2,19 @@
 - package: boost 
   category: tools
   name: boost 
-  version: "1.66.0"
-  version_enc: "1_66_0"
-  compiler: gcc
-  compiler_version: "6.5.0"
+  versions: !include versions.yaml
+  version: "{{ versions.boost.ver}}"
+  version_enc: "{{ versions.boost.enc}}"
+  compiler: "{{ versions.boost.compiler}}"
+  compiler_version: "{{ versions.boost.compiler_version}}"
   extension: tar.gz
-  vendor_source: https://dl.bintray.com/boostorg/release/{{ version }}/source/boost_{{version_enc}}.tar.gz
+  vendor_source: https://dl.bintray.com/boostorg/release/{{ version }}/source/boost_{{version_enc}}.{{extension}}
   description: |
     The Boost (version {{ version }} project provides free peer-reviewed portable C++
     source libraries.  We emphasize libraries that work well with the C++ Standard Library.
     Boost libraries are intended to be widely useful, and usable across a broad spectrum of
     applications. The Boost license encourages both commercial and non-commercial use and 
-    does not require attribution for binary use. \\n
-    BOOST_HOME={{ root }}
+    does not require attribution for binary use. Environment variable BOOST_HOME={{ root }}
   pkgname: "{{ name }}_{{ version }}_{{ compiler }}_{{ compiler_version }}"
   src_tarball: "{{ name }}_{{ version_enc }}.{{ extension }}"
   src_dir: "{{ name }}_{{ version_enc }}"
