@@ -4,16 +4,14 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: boost Module
+  category: TOOLS
   pkgname: "{{ name }}_{{version}}_{{ compiler }}_{{ compiler_version }}-module"
-  no_src_dir: True
-  src_tarball: none
   module:
-    name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{ name }}/{{ compiler }}/{{ compiler_version }}"
-    prepend_path:
-      - "{{ pkg_defaults.module.prepend_path }}"
+    path: "{{ pkg_defaults.module.RCICmpath }}/{{category}}/{{ name }}/{{ compiler }}/{{ compiler_version }}"
     setenv:
       - BOOST_HOME {{ root }}
+    prereq:
+      - "{{ compiler }}/{{ compiler_version }}"
   requires:
     - "{{ name }}_{{ version }}_{{ compiler }}_{{compiler_version}}"
     - rcic-module-support

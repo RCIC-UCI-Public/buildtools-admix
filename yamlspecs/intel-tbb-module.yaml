@@ -1,22 +1,12 @@
-# Builds the module for intel-tbb. It first includes all the definitions
-# for the intel-tbb build and then overwrites specific keys
+# Builds the module for intel-tbb.
 !include intel-tbb.yaml
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: intel-tbb Module
-  pkgname: "{{ name }}_{{version}}-module"
   category: TOOLS
   description: |
       {{ basedescription }}
-      Environment Vars:
-          INTELTBB_HOME = {{ root }}
+      Environment Vars: INTELTBB_HOME = {{ root }}
   module:
-    name: "{{ version }}"
-    path: "{{ pkg_defaults.module.RCICmpath }}/{{ category }}/{{ name }}"
-    prepend_path:
-      - "{{ pkg_defaults.module.prepend_path }}"
     setenv:
       - INTELTBB_HOME {{ root }}
-  requires:
-    - "{{ name }}_{{ version }}"
-    - rcic-module-support

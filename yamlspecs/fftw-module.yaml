@@ -4,10 +4,7 @@
 ---
 - package: fftw Module
   category: TOOLS
-  pkgname: "foundation-{{ name }}_{{version}}-module"
   module:
-    name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{category}}/{{ name }}"
     prepend_path:
       - "{{ pkg_defaults.module.prepend_path }}"
       - -d " " LDFLAGS "-Wl,-rpath,{{ root }}/lib" 
@@ -17,6 +14,3 @@
       - FFTW_DIR  {{ root }}
       - FFTW_INC  {{ root }}/include
       - FFTW_LIB  {{ root }}/lib
-  requires:
-    - "foundation-{{ name }}_{{ version }}"
-    - rcic-module-support
