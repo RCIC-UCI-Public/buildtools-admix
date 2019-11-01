@@ -1,13 +1,14 @@
 ---
 bootstrap:
+   - openmpi-module
 system:
    - openmpi
 build:
+   - "{{ bootstrap }}"
    - gcc-module
    - java7-module
    - java8-module
    - java11-module
-   - openmpi-module
    - boost
    - boost-module
    - intel-tbb
