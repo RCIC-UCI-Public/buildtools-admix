@@ -1,0 +1,16 @@
+!include pymodule.yaml
+---
+- package: python-setuptools 
+  name: setuptools 
+  version: "41.6.0"
+  extension: tar.gz
+  vendor_source:  https://github.com/pypa/setuptools/archive/v{{ version }}.{{ extension }}
+  description: |
+     python setuptools {{version}}.  
+  build:
+    configure: python ./bootstrap.py 
+    pkgmake: python ./setup.py  
+    target: build
+  files:
+    - "/usr/bin/*"
+    - "/usr/lib/python*/*"

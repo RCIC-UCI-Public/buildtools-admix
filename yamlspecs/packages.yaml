@@ -1,10 +1,9 @@
 ---
 bootstrap:
-   - openmpi-module
 system:
    - openmpi
 build:
-   - "{{ bootstrap }}"
+   - openmpi-module
    - gcc-module
    - java7-module
    - java8-module
@@ -17,5 +16,6 @@ build:
    - tcl-module
    - tk
    - tk-module
+   - setuptools
 manifest:
    - "{{ build }}"

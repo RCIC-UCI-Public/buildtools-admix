@@ -1,0 +1,21 @@
+---
+- package: pymodule 
+  name: pymodule_skel
+  version: 
+  extension: tar.gz
+  vendor_source:  https://github.com/pyca/pynacl/archive/{{ version }}.{{ extension }}
+  description: |
+     source code: {{ vendor_source }}
+
+  pkgname: "python-{{ name }}"
+  src_tarball: "{{ name }}-{{ version}}.{{ extension }}"
+  src_dir: "{{ name }}-{{ version }}"
+  root: "{{pkg_defaults.python_pkgs}}"
+  build:
+    configure: echo No configure required
+    pkgmake: python ./setup.py  
+    target: build
+  install:
+    makeinstall: python ./setup.py install --root=$(ROOT) 
+  files: 
+    - "{{ root }}/*"

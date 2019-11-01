@@ -8,7 +8,11 @@ BUILD='
   ## Define the key components of the environment module\n
   module:
     name: "{{ version }}"
-    path: "{{root}}/{{ name }}"
+    path: "{{root}}"
+'
+PREREQ='
+    prereq: 
+       - "{{ compiler }}/{{ compiler_version }}"
 '
 SETENV='
     setenv:
@@ -20,6 +24,7 @@ PREPEND='
 cat $SKEL_MODULE
 echo "$VERSION"
 echo "$BUILD"
+echo "$PREREQ"
 echo -n "$SETENV" 
 awk '/setenv/{print "      - " $2, $3}' $OMPI_MODULE
 echo -n "$PREPEND" 
