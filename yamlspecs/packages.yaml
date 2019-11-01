@@ -1,21 +1,23 @@
 ---
 bootstrap:
 system:
-   - openmpi
+  - openmpi
 build:
-   - openmpi-module
-   - gcc-module
-   - java7-module
-   - java8-module
-   - java11-module
-   - boost
-   - boost-module
-   - intel-tbb
-   - intel-tbb-module
-   - tcl
-   - tcl-module
-   - tk
-   - tk-module
-   - setuptools
+  - openmpi-module
+  - gcc-module
+  - java7-module
+  - java8-module
+  - java11-module
+  - boost
+  - boost-module
+  - fftw
+  - fftw-module
+  - intel-tbb
+  - intel-tbb-module
+  - tcl
+  - tcl-module
+  - tk
+  - tk-module
+  - setuptools
 manifest:
-   - "{{ build }}"
+  - "{{ build }}"
