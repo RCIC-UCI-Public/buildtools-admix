@@ -7,7 +7,7 @@ VERSION="  version: $VER"
 BUILD='
   ## Define the key components of the environment module\n
   module:
-    name: "{{ version }}"
+    name: "{{ compiler_version }}"
     path: "{{root}}"
 '
 PREREQ='

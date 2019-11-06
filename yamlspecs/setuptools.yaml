@@ -2,7 +2,7 @@
 ---
 - package: python-setuptools 
   name: setuptools 
-  version: "41.6.0"
+  version: "40.6.0"
   extension: tar.gz
   vendor_source:  https://github.com/pypa/setuptools/archive/v{{ version }}.{{ extension }}
   description: |

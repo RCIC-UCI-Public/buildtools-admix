@@ -12,7 +12,7 @@
   description: |
     Module file for system defined Openmpi version {{ version }} compiled with GCC version {{ compiler_version }}.
     Changes with major OS version changes
-  root: "{{ pkg_defaults.module.path }}/{{ name }}/{{compiler}}/{{compiler_version}}"
+  root: "{{ pkg_defaults.module.path }}/{{ name }}/{{ version }}/{{compiler}}"
   no_src_dir: True
   extension: 
   requires:
