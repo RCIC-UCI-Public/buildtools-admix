@@ -5,7 +5,7 @@
 - package: openmpi module 
   name: openmpi 
   pkgname: "{{ name }}_{{version}}-module"
-  category: TOOLS
+  category: COMPILERS
   prefix: /usr
   compiler: gcc 
   versions: !include versions.yaml
@@ -13,7 +13,7 @@
   description: |
     Module file for system defined Openmpi version {{ version }} compiled with GCC version {{ compiler_version }}.
     Changes with major OS version changes
-  root: "{{ pkg_defaults.module.path }}/{{ name }}/{{compiler}}/{{compiler_version}}"
+  root: "{{ pkg_defaults.module.path }}/{{ name }}/{{version}}"
   requires:
     - rcic-module-support
     - openmpi

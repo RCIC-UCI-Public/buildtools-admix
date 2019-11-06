@@ -7,12 +7,13 @@ VERSION="  version: $VER"
 BUILD='
   ## Define the key components of the environment module\n
   module:
-    name: "{{ version }}"
+    logname: "{{name}}/{{version}}/{{compiler}}{{compiler_version}}"
+    name: "{{compiler}}{{compiler_version}}"
     path: "{{root}}"
 '
 PREREQ='
     prereq: 
-       - "{{ compiler }}/{{ compiler_version }}"
+       - "{{compiler}}/{{compiler_version}}"
 '
 SETENV='
     setenv:
@@ -29,4 +30,3 @@ echo -n "$SETENV"
 awk '/setenv/{print "      - " $2, $3}' $OMPI_MODULE
 echo -n "$PREPEND" 
 awk '/prepend-path/{print "      - " $2, $3}' $OMPI_MODULE
-
