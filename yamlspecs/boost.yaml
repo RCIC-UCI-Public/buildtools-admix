@@ -1,6 +1,5 @@
 ---
 - package: boost 
-  category: tools
   name: boost 
   versions: !include versions.yaml
   version: "{{ versions.boost.ver}}"
