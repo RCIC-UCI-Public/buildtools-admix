@@ -18,7 +18,7 @@
       - PATH /usr/lib/jvm/jre-{{ version }}/bin
       - PATH /usr/lib/jvm/java-{{ version }}/bin
     setenv: 
-      - JAVA_HOME /usr/lib/jvm/jre-{{ version }}
+      - JAVA_HOME /usr/lib/jvm/java-{{ version }}
     logger:  exec /bin/logger -p local6.notice - t module-hpc $env(USER) {{ name }}/{{ version }}
   requires:
     - "{{ name }}-{{ version }}-openjdk"
