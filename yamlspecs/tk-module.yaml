@@ -3,5 +3,5 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: tk Module
-  category: TOOLS
+  category: LANGUAGES
   foundation: "foundation-"

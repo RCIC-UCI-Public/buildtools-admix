@@ -3,5 +3,5 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: tcl Module
-  category: TOOLS
+  category: LANGUAGES
   foundation: "foundation-"
