@@ -3,10 +3,7 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: intel-tbb Module
-  category: TOOLS
-  description: |
-      {{ basedescription }}
-      Environment Vars: INTELTBB_HOME = {{ root }}
+  category: COMPILERS
   module:
     setenv:
       - INTELTBB_HOME {{ root }}
