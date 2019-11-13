@@ -5,9 +5,10 @@
 - package: boost Module
   category: TOOLS
   pkgname: "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}-module"
+  specs: "{{compiler}}.{{compiler_version}}"
   module:
     logname: "{{name}}/{{version}}/{{compiler}}{{compiler_version}}"
-    name: "{{compiler}}{{compiler_version}}"
+    name: "{{specs}}"
     path: "{{pkg_defaults.module.RCICmpath}}/{{category}}/{{name}}/{{version}}"
     setenv:
       - BOOST_HOME {{root}}
