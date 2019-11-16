@@ -1,8 +1,8 @@
 ---
 - package: fftw 
-  category: tools
   name: fftw
-  version: 3.3.8
+  versions: !include versions.yaml
+  version: "{{ versions.fftw}}"
   extension: tar.gz
   vendor_source: http://www.fftw.org/{{name}}-{{version}}.{{extension}}
   description: |
@@ -10,7 +10,7 @@
     in one or more dimensions, of arbitrary input size, and of both real and complex 
     data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST). 
   pkgname: foundation-{{ name }}_{{version}}
-  root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
+  root: "{{ pkg_defaults.app_path }}/{{ name }}/{{ version }}"
   build:
     configure_args: >
       --prefix={{root}} 

@@ -1,19 +1,19 @@
-# Builds the module for boost. It first includes all the definitions
-# for the boost build and then overwrites specific keys
+# Builds the module for boost.
 !include boost.yaml
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: boost Module
-  pkgname: "{{ name }}_{{version}}_{{ compiler }}_{{ compiler_version }}-module"
-  no_src_dir: True
-  src_tarball: none
+  category: TOOLS
+  pkgname: "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}-module"
+  specs: "{{compiler}}.{{compiler_version}}"
   module:
-    name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{ name }}/{{ compiler }}/{{ compiler_version }}"
-    prepend_path:
-      - "{{ pkg_defaults.module.prepend_path }}"
+    logname: "{{name}}/{{version}}/{{compiler}}{{compiler_version}}"
+    name: "{{specs}}"
+    path: "{{pkg_defaults.module.RCICmpath}}/{{category}}/{{name}}/{{version}}"
     setenv:
-      - BOOST_HOME {{ root }}
+      - BOOST_HOME {{root}}
+    prereq:
+      - "{{compiler}}/{{compiler_version}}"
   requires:
-    - "{{ name }}_{{ version }}_{{ compiler }}_{{compiler_version}}"
+    - "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}"
     - rcic-module-support

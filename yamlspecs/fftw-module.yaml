@@ -1,15 +1,10 @@
-# Build the module for fftw. It first includes all the definitions
-# for the fftw build and then overwrites specific keys
+# Build the module for fftw. 
 !include fftw.yaml
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: fftw Module
-  pkgname: "foundation-{{ name }}_{{version}}-module"
-  no_src_dir: True
-  src_tarball: none
+  category: TOOLS
   module:
-    name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{ name }}"
     prepend_path:
       - "{{ pkg_defaults.module.prepend_path }}"
       - -d " " LDFLAGS "-Wl,-rpath,{{ root }}/lib" 
@@ -19,7 +14,3 @@
       - FFTW_DIR  {{ root }}
       - FFTW_INC  {{ root }}/include
       - FFTW_LIB  {{ root }}/lib
-
-  requires:
-    - "foundation-{{ name }}_{{ version }}"
-    - rcic-module-support

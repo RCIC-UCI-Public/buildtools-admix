@@ -1,18 +1,19 @@
 ---
 - package: Intel Threading Building Blocks 
-  category: tools
   name: intel-tbb 
-  version: "20190605"
+  versions: !include versions.yaml
+  version: "{{versions.tbb.ver}}"
+  version_full: "{{versions.tbb.index}}"
   extension: tgz
-  vendor_source: https://github.com/intel/tbb/releases/download/2019_U8/tbb2019_20190605oss_lin.{{extension}}
-  basedescription: |
+  vendor_source: https://github.com/intel/tbb/releases/download/2019_U8/{{version_full}}_lin.{{extension}}
+  description: |
     Intel Threading Building Blocks {{ version }}. Threading Building Blocks (TBB) lets you easily 
-    write parallel C++ programs that take full advantage of multicore performance, that are portable, 
-    composable and have future-proof scalability.
-  description: "{{ basedescription }}"
+    write parallel C++ programs that take full advantage of multicore performance, that are portable,
+    composable and have future-proof scalability. 
+    Environment Vars: INTELTBB_HOME = {{ root }}
   pkgname: "{{ name }}_{{ version }}"
   no_src_dir: True
-  tardir: tbb2019_{{version}}oss
+  tardir: "{{version_full}}"
   src_tarball: "{{ tardir }}_lin.{{ extension }}"
   root: "{{ pkg_defaults.app_path }}/{{ name }}/{{ version }}"
   build:

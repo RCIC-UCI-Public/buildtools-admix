@@ -4,29 +4,26 @@ OMPI_MODULE=/etc/modulefiles/mpi/openmpi-x86_64
 SKEL_MODULE=openmpi-module.yaml.in
 VER=$(rpm -qi $(rpm -qf $OMPI_MODULE) | awk -F : '/^Version/{print $NF}')
 VERSION="  version: $VER" 
-BUILD='
-  ## Define the key components of the environment module\n
+BUILD='  # Define the key components of the environment module
+  instdir: "{{root }}"
+  spec: "{{compiler}}.{{compiler_version}}"
   module:
-    name: "{{ compiler_version }}"
-    path: "{{root}}"
-'
-PREREQ='
+    logname: "{{name}}/{{version}}/{{spec}}"
+    name: "{{spec}}"
+    path: "{{instdir}}/{{version}}"
     prereq: 
-       - "{{ compiler }}/{{ compiler_version }}"
-'
-SETENV='
-    setenv:
-'
-PREPEND='
-    prepend_path:
-'
+       - "{{compiler}}/{{compiler_version}}" '
+SETENV='    setenv: '
+PREPEND='    prepend_path: '
+FILES='  files:
+    - "{{instdir}}"'
 
 cat $SKEL_MODULE
 echo "$VERSION"
 echo "$BUILD"
-echo "$PREREQ"
-echo -n "$SETENV" 
+#echo "$PREREQ"
+echo "$SETENV" 
 awk '/setenv/{print "      - " $2, $3}' $OMPI_MODULE
-echo -n "$PREPEND" 
+echo "$PREPEND" 
 awk '/prepend-path/{print "      - " $2, $3}' $OMPI_MODULE
-
+echo "$FILES"
