@@ -6,6 +6,7 @@
   name: openmpi 
   pkgname: "{{ name }}_{{version}}-module"
   category: COMPILERS
+  release: 2
   prefix: /usr
   compiler: gcc 
   versions: !include versions.yaml
