@@ -1,3 +1,4 @@
+!include /opt/rcic/include/rcic-package.yaml
 ---
 - package: Intel Threading Building Blocks 
   name: intel-tbb 
@@ -15,7 +16,6 @@
   no_src_dir: True
   tardir: "{{version_full}}"
   src_tarball: "{{ tardir }}_lin.{{ extension }}"
-  root: "{{ pkg_defaults.app_path }}/{{ name }}/{{ version }}"
   build:
     configure: "echo no configure required" 
     modules: 
@@ -27,5 +27,3 @@
        cat {{ src_tarball }} | (cd $(ROOT)/{{ root }}; tar xvzf -);
        mv $(ROOT)/{{ root }}/{{ tardir }}/* $(ROOT)/{{ root }};
        rmdir $(ROOT)/{{ root }}/{{ tardir }}
-  files:
-    -  "{{ root }}"
