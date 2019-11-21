@@ -4,7 +4,7 @@
   name: tcl
   pkgname: "foundation-{{name}}_{{version}}"
   versions: !include versions.yaml
-  version: "{{ versions.tcl}}"
+  version: "{{versions.tcl}}"
   vendor_source: https://prdownloads.sourceforge.net/tcl/{{name}}{{version}}-src.{{extension}}
   src_dir: "{{name}}{{version}}"
   description: |

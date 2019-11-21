@@ -8,14 +8,14 @@
   extension: tgz
   vendor_source: https://github.com/intel/tbb/releases/download/2019_U8/{{version_full}}_lin.{{extension}}
   description: |
-    Intel Threading Building Blocks {{ version }}. Threading Building Blocks (TBB) lets you easily 
+    Intel Threading Building Blocks {{version}}. Threading Building Blocks (TBB) lets you easily 
     write parallel C++ programs that take full advantage of multicore performance, that are portable,
-    composable and have future-proof scalability. 
-    Environment Vars: INTELTBB_HOME = {{ root }}
-  pkgname: "{{ name }}_{{ version }}"
+    composable and have future-proof scalability.
+    Environment Vars: INTELTBB_HOME = {{root}}
+  pkgname: "{{name}}_{{version}}"
   no_src_dir: True
   tardir: "{{version_full}}"
-  src_tarball: "{{ tardir }}_lin.{{ extension }}"
+  src_tarball: "{{tardir}}_lin.{{extension}}"
   build:
     configure: "echo no configure required" 
     modules: 
@@ -23,7 +23,7 @@
     pkgmake: echo "prebuilt tarball"
   install:
     makeinstall: >
-       mkdir -p $(ROOT)/{{ root }};
-       cat {{ src_tarball }} | (cd $(ROOT)/{{ root }}; tar xvzf -);
-       mv $(ROOT)/{{ root }}/{{ tardir }}/* $(ROOT)/{{ root }};
-       rmdir $(ROOT)/{{ root }}/{{ tardir }}
+       mkdir -p $(ROOT)/{{root}};
+       cat {{src_tarball}} | (cd $(ROOT)/{{root}}; tar xvzf -);
+       mv $(ROOT)/{{root}}/{{tardir}}/* $(ROOT)/{{root}};
+       rmdir $(ROOT)/{{root}}/{{tardir}}

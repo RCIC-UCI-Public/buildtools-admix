@@ -4,7 +4,7 @@
   name: setuptools 
   versions: !include versions.yaml
   version: "{{ versions.setuptools}}"
-  vendor_source:  https://github.com/pypa/setuptools/archive/v{{ version }}.{{ extension }}
+  vendor_source:  https://github.com/pypa/setuptools/archive/v{{version}}.{{extension}}
   description: |
      Python setuptools {{version}}
   build:
@@ -14,4 +14,3 @@
   files:
     - "/usr/bin/*"
     - "/usr/lib/python*/*"
-

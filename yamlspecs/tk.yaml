@@ -4,7 +4,7 @@
   name: tk
   pkgname: "foundation-{{name}}_{{version}}"
   versions: !include versions.yaml
-  version: "{{ versions.tk}}"
+  version: "{{versions.tk}}"
   suffix: 1-src
   vendor_source: https://prdownloads.sourceforge.net/tcl/{{name}}{{version}}.{{suffix}}.{{extension}}
   src_dir: "{{name}}{{version}}"

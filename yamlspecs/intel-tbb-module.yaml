@@ -6,4 +6,4 @@
   category: COMPILERS
   module:
     setenv:
-      - INTELTBB_HOME {{ root }}
+      - INTELTBB_HOME {{root}}
