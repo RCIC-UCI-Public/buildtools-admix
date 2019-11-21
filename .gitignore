@@ -1,4 +1,4 @@
-sources/*
+sources/
 BUILD/
 RPMS/
 SOURCES/
@@ -7,3 +7,4 @@ cache/
 localrepo/
 yamlspecs/tmpbuild/
 yum.*
+yamlspecs/*.pkg
