@@ -10,9 +10,7 @@ BUILD='  # Define the key components of the environment module
   module:
     logname: "{{name}}/{{version}}/{{spec}}"
     name: "{{spec}}"
-    path: "{{instdir}}/{{version}}"
-    prereq: 
-       - "{{compiler}}/{{compiler_version}}" '
+    path: "{{instdir}}/{{version}}"'
 SETENV='    setenv: '
 PREPEND='    prepend_path: '
 FILES='  files:
