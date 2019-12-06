@@ -1,0 +1,21 @@
+# this is a common setup for all system versions of java module
+# must be included in specific yaml file
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: java openjdk module 
+  category: COMPILERS
+  name: java
+  versions: !include versions.yaml
+  description: Environment module of openjdk java version {{version}}
+  pkgname: "{{name_ver}}-module"
+  root: "{{pkg_defaults.module.path}}"
+  module:
+    path: "{{pkg_defaults.module.path}}/{{name}}"
+    prepend_path:
+      - PATH /usr/lib/jvm/jre-{{version}}/bin
+      - PATH /usr/lib/jvm/java-{{version}}/bin
+    setenv: 
+      - JAVA_HOME /usr/lib/jvm/java-{{version}}
+  requires:
+    - "{{name}}-{{version}}-openjdk"
+    - rcic-module-support
