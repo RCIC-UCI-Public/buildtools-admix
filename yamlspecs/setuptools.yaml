@@ -3,7 +3,7 @@
 - package: python-setuptools 
   name: setuptools 
   versions: !include versions.yaml
-  version: "{{ versions.setuptools}}"
+  version: "{{versions.setuptools}}"
   vendor_source:  https://github.com/pypa/setuptools/archive/v{{version}}.{{extension}}
   description: |
      Python setuptools {{version}}
