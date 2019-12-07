@@ -1,6 +1,6 @@
 # Builds the module for tk.
 !include tk.yaml
-!include /opt/rcic/include/rcic-module.yaml
+!include rcic-module.yaml
 ---
 - package: tk Module
   category: LANGUAGES

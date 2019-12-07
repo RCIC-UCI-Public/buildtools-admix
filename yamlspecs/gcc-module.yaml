@@ -1,5 +1,5 @@
 # Builds the module for the system-defined gcc. 
-!include /opt/rcic/include/rcic-module.yaml
+!include rcic-module.yaml
 ---
 - package: GCC Module
   category: COMPILERS

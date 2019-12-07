@@ -1,6 +1,6 @@
 # Builds the module for intel-tbb.
 !include intel-tbb.yaml
-!include /opt/rcic/include/rcic-module.yaml
+!include rcic-module.yaml
 ---
 - package: intel-tbb Module
   category: COMPILERS

@@ -1,6 +1,6 @@
 # this is a common setup for all system versions of java module
 # must be included in specific yaml file
-!include /opt/rcic/include/rcic-module.yaml
+!include rcic-module.yaml
 ---
 - package: java openjdk module 
   category: COMPILERS

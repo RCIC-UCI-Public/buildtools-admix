@@ -1,4 +1,4 @@
-!include /opt/rcic/include/rcic-package.yaml
+!include rcic-package.yaml
 ---
 - package: tk 
   name: tk
