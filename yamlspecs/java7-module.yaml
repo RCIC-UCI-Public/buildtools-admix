@@ -1,6 +1,5 @@
 # module for the system java-1.7.0-openjdk
 !include javacommon.yaml
 ---
-#- package: java7 openjdk module 
 - name_ver: java7
   version: "{{versions.java7}}"
