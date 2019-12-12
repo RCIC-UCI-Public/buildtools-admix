@@ -2,7 +2,6 @@
 ---
 - package: tk 
   name: tk
-  pkgname: "foundation-{{name}}_{{version}}"
   versions: !include versions.yaml
   version: "{{versions.tk}}"
   suffix: 1-src
