@@ -6,7 +6,7 @@ tk: "8.6.9"
 java7: "1.7.0"
 java8: "1.8.0"
 java11: "11"
-setuptools: "41.6.0"
+setuptools: "41.0.0"
 tbb:
   ver: "20190605"
   index: "tbb2019_20190605oss"
