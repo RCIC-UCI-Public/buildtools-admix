@@ -19,3 +19,5 @@
     target: 
   install:
     makeinstall: cd unix; $(MAKE) DESTDIR=$(ROOT) install
+  requires:
+    - tcl_{{version}}
