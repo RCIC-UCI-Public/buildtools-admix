@@ -7,27 +7,21 @@
   versions: !include versions.yaml
   version: "{{versions.gcc}}"
   pkgname: "{{name}}_{{version}}-module"
-  prefix: /usr
   description: |
     Module file for system defined GCC version {{version}}. Changes with major OS version changes
-  root: "{{pkg_defaults.module.path}}"
+  root: "/usr"
   module:
-    path: "{{root}}/{{name}}"
     setenv:
-      - GCC_INSTALL_PREFIX  {{prefix}}
-      - CPP  {{prefix}}/bin/cpp
-      - CC  {{prefix}}/bin/gcc
-      - CXX  {{prefix}}/bin/g++
-      - OBJC  {{prefix}}/bin/gcc
-      - OBJCXX  {{prefix}}/bin/g++
-      - FC  {{prefix}}/bin/gfortran
-      - F77  {{prefix}}/bin/gfortran
-      - F90  {{prefix}}/bin/gfortran
-    prepend_path:
-      - -d " " LDFLAGS "-Wl,-rpath,{{prefix}}/lib" 
-      - -d " " LDFLAGS "-L{{prefix}}/lib" 
-      - LD_LIBRARY_PATH {{prefix}}/lib
-      - LD_LIBRARY_PATH {{prefix}}/lib/gcc/x86_64-redhat-linux/{{version}}
+      - GCC_INSTALL_PREFIX  {{root}}
+      - CPP  {{root}}/bin/cpp
+      - CC  {{root}}/bin/gcc
+      - CXX  {{root}}/bin/g++
+      - OBJC  {{root}}/bin/gcc
+      - OBJCXX  {{root}}/bin/g++
+      - FC  {{root}}/bin/gfortran
+      - F77  {{root}}/bin/gfortran
+      - F90  {{root}}/bin/gfortran
+    prepend_path: ""
   requires:
     - "{{name}}"
     - rcic-module-support

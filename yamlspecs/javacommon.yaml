@@ -3,19 +3,18 @@
 !include rcic-module.yaml
 ---
 - package: java openjdk module 
-  category: COMPILERS
+  category: LANGUAGES
   name: java
   versions: !include versions.yaml
   description: Environment module of openjdk java version {{version}}
   pkgname: "{{name_ver}}-module"
-  root: "{{pkg_defaults.module.path}}"
+  root: "/usr/lib/jvm"
   module:
-    path: "{{pkg_defaults.module.path}}/{{name}}"
     prepend_path:
-      - PATH /usr/lib/jvm/jre-{{version}}/bin
-      - PATH /usr/lib/jvm/java-{{version}}/bin
+      - PATH {{root}}/jre-{{version}}/bin
+      - PATH {{root}}/java-{{version}}/bin
     setenv: 
-      - JAVA_HOME /usr/lib/jvm/java-{{version}}
+      - JAVA_HOME {{root}}/java-{{version}}
   requires:
     - "{{name}}-{{version}}-openjdk"
     - rcic-module-support
