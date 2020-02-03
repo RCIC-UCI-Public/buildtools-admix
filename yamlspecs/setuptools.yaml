@@ -2,6 +2,8 @@
 ---
 - package: python-setuptools 
   name: setuptools 
+  arch: noarch
+  release: "1"
   versions: !include versions.yaml
   version: "{{versions.setuptools}}"
   vendor_source:  https://github.com/pypa/setuptools/archive/v{{version}}.{{extension}}
@@ -14,3 +16,7 @@
   files:
     - "/usr/bin/*"
     - "/usr/lib/python*/*"
+  provides: 
+    - python-distribute = {{version}}-{{release}}
+    - python-setuptools-devel = {{version}}-{{release}}
+    - python2-setuptools = {{version}}-{{release}}
