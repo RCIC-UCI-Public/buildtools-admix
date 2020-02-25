@@ -14,5 +14,7 @@ build:
   - tcl-module
   - tk
   - tk-module
+  - xz
+  - xz-module
 manifest:
   - "{{build}}"
