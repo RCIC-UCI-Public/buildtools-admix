@@ -1,0 +1,26 @@
+!include rcic-package.yaml
+---
+- package: xz utils 
+  name: xz
+  compiler: gcc 
+  compiler_version: "{{versions.gcc}}"
+  pkgname: "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}"
+  versions: !include versions.yaml
+  version: "{{versions.xz}}"
+  vendor_source: https://tukaani.org/xz/{{name}}-{{version}}.{{extension}}
+  description: |
+    XZ Utils is free general-purpose data compression software with a high compression ratio. 
+    XZ Utils were written for POSIX-like systems, but also work on some not-so-POSIX systems. 
+    XZ Utils are the successor to LZMA Utils. Compiled with gcc {{compiler_version}}
+  build:
+    configure: ./configure
+    configure_args: > 
+      --prefix={{root}}
+    pkgmake: make 
+    modules:
+      - "{{compiler}}/{{compiler_version}}"
+    target: 
+  install:
+    makeinstall: >
+       mkdir -p $(ROOT){{root}};
+       make install DESTDIR=$(ROOT)
