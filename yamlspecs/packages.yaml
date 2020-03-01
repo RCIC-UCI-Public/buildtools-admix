@@ -1,6 +1,8 @@
 ---
 system:
   - openmpi
+bootstrap:
+  - gcc-module
 build:
   - gcc-module
   - java7-module
