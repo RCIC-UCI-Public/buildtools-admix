@@ -1,6 +1,7 @@
 ---
 system:
   - openmpi
+  - libX11-devel
 bootstrap:
   - gcc-module
   - tcl
