@@ -6,7 +6,7 @@ bootstrap:
   - tcl
   - tcl-module
 build:
-  - "{{bootstrap}}
+  - "{{bootstrap}}"
   - java7-module
   - java8-module
   - java11-module
