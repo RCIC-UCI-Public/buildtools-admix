@@ -1,0 +1,19 @@
+!include rcic-package.yaml
+---
+- package: icu international components for unicode 
+  name: icu 
+  versions: !include versions.yaml
+  version: "{{versions.icu.version}}"
+  tarversion: "{{versions.icu.tarversion}}"
+  dirname: "{{name}}-release-{{tarversion}}"
+  vendor_source: https://github.com/unicode-org/icu/archive/{{dirname}}.{{extension}}
+  src_dir:  "{{dirname}}/icu4c/source"
+  description: |
+    ICU is the premier library for software internationalization, used by a wide array of companies and organizations.
+  build:
+    configure: ./configure
+    target: 
+  install:
+    makeinstall: >
+       mkdir -p $(ROOT){{root}};
+       make install DESTDIR=$(ROOT)
