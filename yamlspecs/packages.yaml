@@ -21,5 +21,7 @@ build:
   - tk-module
   - xz
   - xz-module
+  - parallel
+  - parallel-module
 manifest:
   - "{{build}}"

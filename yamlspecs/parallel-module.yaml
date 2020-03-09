@@ -1,0 +1,11 @@
+# Builds the module for parallel.
+!include parallel.yaml
+!include rcic-module.yaml
+---
+- package: parallel Module
+  category: TOOLS
+  module:
+    setenv: ""
+    prepend_path: 
+      - PATH {{root}}/bin
+      - MANPATH {{root}}/share/man
