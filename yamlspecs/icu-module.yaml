@@ -1,0 +1,6 @@
+# Builds the module for icu.
+!include icu.yaml
+!include rcic-module.yaml
+---
+- package: icu Module
+  category: TOOLS

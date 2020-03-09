@@ -16,3 +16,6 @@ boost:
   compiler: "gcc"
   compiler_version: "6.5.0"
 xz: "5.2.4"
+icu: 
+  version: "65.1"
+  tarversion: "65-1"

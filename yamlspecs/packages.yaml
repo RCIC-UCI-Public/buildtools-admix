@@ -1,17 +1,22 @@
 ---
 system:
   - openmpi
-build:
+  - libX11-devel
+bootstrap:
   - gcc-module
+  - tcl
+  - tcl-module
+build:
+  - "{{bootstrap}}"
   - java7-module
   - java8-module
   - java11-module
   - intel-tbb
   - intel-tbb-module
+  - icu
+  - icu-module
   - openmpi-module
   - setuptools
-  - tcl
-  - tcl-module
   - tk
   - tk-module
   - xz
