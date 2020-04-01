@@ -1,0 +1,17 @@
+!include rcic-package.yaml
+---
+- package: protobuf 
+  name: protobuf
+  versions: !include versions.yaml
+  version: "{{versions.protobuf}}"
+  vendor_source: https://github.com/protocolbuffers/protobuf/archive/v{{version}}.{{extension}}
+  description: |
+    Protocol Buffers {{version}} - Google's data interchange format 
+  build:
+    preconfigure: ./autogen.sh
+    configure: ./configure
+    configure_args: >   
+      --prefix={{root}}
+    pkgmake: make
+  install:
+    makeinstall: $(MAKE) DESTDIR=$(ROOT) install
