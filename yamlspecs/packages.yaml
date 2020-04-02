@@ -7,7 +7,6 @@ bootstrap:
   - tcl
   - tcl-module
 build:
-  - "{{bootstrap}}"
   - java7-module
   - java8-module
   - java11-module
@@ -19,9 +18,8 @@ build:
   - setuptools
   - tk
   - tk-module
-  - xz
-  - xz-module
   - parallel
   - parallel-module
 manifest:
+  - "{{bootstrap}}"
   - "{{build}}"
