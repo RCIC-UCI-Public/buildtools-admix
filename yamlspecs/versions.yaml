@@ -10,12 +10,6 @@ setuptools: "41.0.0"
 tbb:
   ver: "20190605"
   index: "tbb2019_20190605oss"
-boost:
-  ver: "1.66.0"
-  enc: "1_66_0"
-  compiler: "gcc"
-  compiler_version: "6.5.0"
-xz: "5.2.4"
 icu: 
   version: "65.1"
   tarversion: "65-1"
