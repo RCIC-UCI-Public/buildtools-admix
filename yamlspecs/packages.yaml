@@ -23,5 +23,7 @@ build:
   - xz-module
   - parallel
   - parallel-module
+  - likwid
+  - likwid-module
 manifest:
   - "{{build}}"

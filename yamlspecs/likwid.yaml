@@ -13,8 +13,5 @@
       target: PREFIX={{root}}
   install:
       makeinstall: >
-         if [ ! -d {{root}} ]; then mkdir -p {{ root }}; fi;
-         mount --bind $(ROOT)/{{root}} {{root}};
-         make PREFIX=$(ROOT)/{{root}} install;
-         umount {{root}}
+         make PREFIX=$(ROOT)/{{root}} install
 
