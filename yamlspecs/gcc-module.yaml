@@ -4,6 +4,7 @@
 - package: GCC Module
   category: COMPILERS
   name: gcc
+  release: 2
   versions: !include versions.yaml
   version: "{{versions.gcc}}"
   pkgname: "{{name}}_{{version}}-module"
@@ -25,3 +26,5 @@
   requires:
     - "{{name}}"
     - rcic-module-support
+  provides:
+    - "{{name}}_{{version}}" 
