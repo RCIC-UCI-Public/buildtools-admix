@@ -22,6 +22,7 @@ build:
   - parallel-module
   - likwid
   - likwid-module
+  - nodejs
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
