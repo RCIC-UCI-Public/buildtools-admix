@@ -1,0 +1,39 @@
+!include rcic-package.yaml
+---
+- package: nodejs 
+  name: nodejs 
+  versions: !include versions.yaml
+  version: "{{versions.nodejs}}"
+  extension: tar.xz 
+  tardir: "node-v{{version}}-linux-x64"
+  vendor_source: https://nodejs.org/dist/v{{version}}/{{tardir}}.{{extension}}
+  description: |
+    Node.js {{version}} is an asynchronous event-driven JavaScript runtime, 
+    Node.js is designed to build scalable network applications. 
+
+  pkgname: "{{name}}"
+  root: /usr
+
+  no_src_dir: True
+  src_tarball: "{{tardir}}.{{extension}}"
+  build:
+    configure: "echo no configure required" 
+    modules: 
+    target: 
+    pkgmake: echo "prebuilt tarball"
+  install:
+    makeinstall: >
+       mkdir -p $(ROOT)/{{root}};
+       xzcat {{src_tarball}} | (cd $(ROOT)/{{root}}; tar xvf - --strip-components=1);
+       mv  $(ROOT)/{{root}}/CHANGELOG.md $(ROOT)/{{root}}/share/doc/node;
+       mv  $(ROOT)/{{root}}/README.md $(ROOT)/{{root}}/share/doc/node;
+       mv  $(ROOT)/{{root}}/LICENSE $(ROOT)/{{root}}/share/doc/node
+   
+  files:
+     - "{{root}}/bin/*"
+     - "{{root}}/include/*"
+     - "{{root}}/lib/*"
+     - "{{root}}/share/doc/*"
+     - "{{root}}/share/man/man1/*"
+     - "{{root}}/share/systemtap/tapset/*"
+

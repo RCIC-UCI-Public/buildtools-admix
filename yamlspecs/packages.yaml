@@ -20,6 +20,9 @@ build:
   - tk-module
   - parallel
   - parallel-module
+  - likwid
+  - likwid-module
+  - nodejs
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

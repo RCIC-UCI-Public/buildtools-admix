@@ -14,3 +14,5 @@ icu:
   version: "65.1"
   tarversion: "65-1"
 parallel: "20200222"
+likwid: "5.0.1"
+nodejs: "12.16.3"
