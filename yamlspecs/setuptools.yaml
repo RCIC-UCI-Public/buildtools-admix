@@ -4,7 +4,6 @@
   name: setuptools 
   arch: noarch
   release: "1"
-  versions: !include versions.yaml
   version: "{{versions.setuptools}}"
   vendor_source:  https://github.com/pypa/setuptools/archive/v{{version}}.{{extension}}
   description: |

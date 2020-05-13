@@ -12,7 +12,6 @@
     write parallel C++ programs that take full advantage of multicore performance, that are portable,
     composable and have future-proof scalability.
     Environment Vars: INTELTBB_HOME = {{root}}
-  pkgname: "{{name}}_{{version}}"
   no_src_dir: True
   tardir: "{{version_full}}"
   src_tarball: "{{tardir}}_lin.{{extension}}"

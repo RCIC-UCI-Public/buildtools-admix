@@ -1,10 +1,11 @@
 # This "copies" the system openmpi module file  into a standard
 # standard naming convention 
-!include rcic-module.yaml
+!include rcic-package.yaml
+!include new-rcic-module.yaml
 ---
 - package: openmpi module 
   name: openmpi 
-  pkgname: "{{name}}_{{version}}-module"
+  baserpm: "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}"
   category: COMPILERS
   release: 2
   versions: !include versions.yaml
@@ -14,12 +15,14 @@
     Module file for system defined Openmpi version {{version}} compiled
     with GCC version {{compiler_version}}. Changes with major OS version changes
   root: "/usr"
-  requires:
-    - openmpi
-    - openmpi-devel
-    - rcic-module-support
-  spec: "{{compiler}}.{{compiler_version}}"
+#  spec: "{{compiler}}.{{compiler_version}}"
   module:
-    logname: "{{name}}/{{version}}/{{spec}}"
-    name: "{{spec}}"
-    path: "{{mod_defaults.path}}/{{version}}"
+    <<: *ModuleCompiler
+    prereq: ""
+    requires:
+      - openmpi
+      - openmpi-devel
+      - rcic-module-support
+#    logname: "{{name}}/{{version}}/{{spec}}"
+#    name: "{{spec}}"
+#    path: "{{mod_defaults.path}}/{{version}}"
