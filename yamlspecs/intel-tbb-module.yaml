@@ -7,9 +7,9 @@
   shortname: inteltbb
   extlib: intel64/gcc4.7
   module:
-    <<: *Module
     setenv:
-      - *Setenv
+      - "{{shortname}}__CPPFLAGS -I{{root}}/include"
+      - "{{shortname}}__LDFLAGS \"-L{{root}}/{{module.lib}}/{{extlib}} -Wl,-rpath,{{root}}/{{module.lib}}/{{extlib}}\""
       - INTELTBB_HOME {{root}}
     prepend_path:
       - PATH {{root}}/bin
