@@ -1,7 +1,7 @@
 # This "copies" the system openmpi module file  into a standard
 # standard naming convention 
 !include rcic-package.yaml
-!include new-rcic-module.yaml
+!include rcic-module.yaml
 ---
 - package: openmpi module 
   name: openmpi 
