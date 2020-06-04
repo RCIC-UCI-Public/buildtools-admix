@@ -24,6 +24,8 @@
       - F77  {{root}}/bin/gfortran
       - F90  {{root}}/bin/gfortran
     prepend_path: ""
-    requires:
-      - "{{name}}"
-      - rcic-module-support
+  requires:
+    - "{{name}}"
+    - rcic-module-support
+  provides:
+    - "{{name}}_{{version}}"
