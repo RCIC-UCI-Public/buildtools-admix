@@ -17,6 +17,6 @@
       - PATH {{root}}/java-{{version}}/bin
     setenv: 
       - JAVA_HOME {{root}}/java-{{version}}
-    requires:
-      - "{{name}}-{{version}}-openjdk"
-      - rcic-module-support
+  requires:
+    - "{{name}}-{{version}}-openjdk"
+    - rcic-module-support
