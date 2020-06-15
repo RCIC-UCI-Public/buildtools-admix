@@ -12,7 +12,6 @@
     Module file for system defined GCC version {{version}}. Changes with major OS version changes
   root: "/usr"
   module:
-    <<: *Module
     setenv:
       - GCC_INSTALL_PREFIX  {{root}}
       - CPP  {{root}}/bin/cpp
@@ -24,8 +23,8 @@
       - F77  {{root}}/bin/gfortran
       - F90  {{root}}/bin/gfortran
     prepend_path: ""
-  requires:
-    - "{{name}}"
-    - rcic-module-support
+    requires:
+      - "{{name}}"
+      - rcic-module-support
   provides:
     - "{{name}}_{{version}}"
