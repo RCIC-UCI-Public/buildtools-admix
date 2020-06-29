@@ -1,4 +1,5 @@
 # Builds the module for the system-defined gcc. 
+!include rcic-package.yaml
 !include rcic-module.yaml
 ---
 - package: GCC Module
@@ -23,8 +24,10 @@
       - F77  {{root}}/bin/gfortran
       - F90  {{root}}/bin/gfortran
     prepend_path: ""
-  requires:
-    - "{{name}}"
-    - rcic-module-support
+
+    requires:
+      - "{{name}}"
+      - rcic-module-support
+
   provides:
-    - "{{name}}_{{version}}" 
+    - "{{name}}_{{version}}"

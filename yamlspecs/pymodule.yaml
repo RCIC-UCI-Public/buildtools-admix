@@ -1,14 +1,11 @@
+!include rcic-package.yaml
 ---
 - package: pymodule 
   name: pymodule_skel
-  version: 
-  extension: tar.gz
-  vendor_source:  https://github.com/pyca/pynacl/archive/{{version}}.{{extension}}
+  versions: !include versions.yaml
   description: |
      source code: {{vendor_source}}
   pkgname: "python-{{name}}"
-  src_tarball: "{{name}}-{{version}}.{{extension}}"
-  src_dir: "{{name}}-{{version}}"
   root: "{{pkg_defaults.python_pkgs}}"
   build:
     configure: echo No configure required
@@ -17,4 +14,4 @@
   install:
     makeinstall: python ./setup.py install --root=$(ROOT) 
   files: 
-    - "{{root}}/*"
+    - "{{root}}"

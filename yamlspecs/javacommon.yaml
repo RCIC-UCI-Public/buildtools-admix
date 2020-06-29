@@ -1,5 +1,6 @@
 # this is a common setup for all system versions of java module
 # must be included in specific yaml file
+!include rcic-package.yaml
 !include rcic-module.yaml
 ---
 - package: java openjdk module 
@@ -15,6 +16,6 @@
       - PATH {{root}}/java-{{version}}/bin
     setenv: 
       - JAVA_HOME {{root}}/java-{{version}}
-  requires:
-    - "{{name}}-{{version}}-openjdk"
-    - rcic-module-support
+    requires:
+      - "{{name}}-{{version}}-openjdk"
+      - rcic-module-support
