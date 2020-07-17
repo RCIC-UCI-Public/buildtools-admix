@@ -1,0 +1,34 @@
+# This is for website servers where we run asciidoctor
+# NOTE: need to install ruby and gems before building
+#       yum install ruby
+# No need for module. Content go in /usr/local/[bin,share]
+# For asciidoctor  add /usr/local/bin to $PATH
+# gem automatically looks in .usr/local/share by default
+!include rcic-package.yaml
+---
+- package: asciidoctor 
+  name: asciidoctor
+  versions: !include versions.yaml
+  version: "{{versions.asciidoctor}}"
+  vendor_source: https://github.com/asciidoctor/asciidoctor/archive/v{{version}}.{{extension}}
+  description: |
+    Asciidoctor {{version}} is a fast, open source text processor and publishing toolchain for converting 
+    AsciiDoc content to HTML5, DocBook, PDF, and other formats. Asciidoctor is written in Ruby
+    and runs on all major operating systems. 
+  root: /usr/local
+  build:
+      configure: no configure required
+      configure_args:
+      target:
+  install:
+      makeinstall: >
+         mkdir builddir;
+         gem build asciidoctor.gemspec;
+         gem install {{name}}-{{version}}.gem -i builddir;
+         mkdir -p  $(ROOT){{root}}/share/gems;
+         mv builddir/bin $(ROOT){{root}};
+         mv builddir/* $(ROOT){{root}}/share/gems
+  arch: noarch
+  files:
+     - "{{root}}/bin/*"
+     - "{{root}}/share/gems/*"
