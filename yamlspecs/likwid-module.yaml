@@ -3,3 +3,4 @@
 ---
 - package: likwid module
   category: TOOLS
+  release: 2

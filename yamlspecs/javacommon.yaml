@@ -10,6 +10,7 @@
   description: Environment module of openjdk java version {{version}}
   pkgname: "{{name_ver}}-module"
   root: "/usr/lib/jvm"
+  release: 2
   module:
     prepend_path:
       - PATH {{root}}/jre-{{version}}/bin

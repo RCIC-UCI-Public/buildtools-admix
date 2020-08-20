@@ -5,7 +5,7 @@
 - package: GCC Module
   category: COMPILERS
   name: gcc
-  release: 2
+  release: 3
   versions: !include versions.yaml
   version: "{{versions.gcc}}"
   pkgname: "{{name}}_{{version}}-module"
@@ -31,3 +31,4 @@
 
   provides:
     - "{{name}}_{{version}}"
+    - "{{name}}/{{version}}"

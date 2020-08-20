@@ -4,8 +4,8 @@
 ---
 - package: parallel Module
   category: TOOLS
+  version: 2
   module:
-    <<: *Module
     setenv: ""
     prepend_path: 
       - PATH {{root}}/bin
