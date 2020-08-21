@@ -7,7 +7,7 @@
   name: openmpi 
   baserpm: "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}"
   category: COMPILERS
-  release: 2
+  release: 3
   versions: !include versions.yaml
   compiler: gcc 
   compiler_version: "{{versions.gcc}}"

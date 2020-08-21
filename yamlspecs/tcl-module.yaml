@@ -4,3 +4,4 @@
 ---
 - package: tcl Module
   category: LANGUAGES
+  version: 2

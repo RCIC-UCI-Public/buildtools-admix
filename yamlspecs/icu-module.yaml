@@ -4,3 +4,4 @@
 ---
 - package: icu Module
   category: TOOLS
+  release: 2
