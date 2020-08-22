@@ -4,7 +4,7 @@
 ---
 - package: parallel Module
   category: TOOLS
-  version: 2
+  release: 2
   module:
     setenv: ""
     prepend_path: 
