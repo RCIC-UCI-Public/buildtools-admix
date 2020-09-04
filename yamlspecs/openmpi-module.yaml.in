@@ -15,7 +15,6 @@
     Module file for system defined Openmpi version {{version}} compiled
     with GCC version {{compiler_version}}. Changes with major OS version changes
   root: "/usr"
-#  spec: "{{compiler}}.{{compiler_version}}"
   module:
     <<: *ModuleCompiler
     prereq: ""
@@ -23,6 +22,3 @@
       - openmpi
       - openmpi-devel
       - rcic-module-support
-#    logname: "{{name}}/{{version}}/{{spec}}"
-#    name: "{{spec}}"
-#    path: "{{mod_defaults.path}}/{{version}}"
