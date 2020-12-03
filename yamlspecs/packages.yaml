@@ -2,6 +2,7 @@
 system:
   - openmpi
   - libX11-devel
+  - autoconf
 bootstrap:
   - gcc-module
   - tcl
@@ -23,6 +24,8 @@ build:
   - likwid
   - likwid-module
   - nodejs
+  - protobuf-classic
+  - protobuf-classic-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
