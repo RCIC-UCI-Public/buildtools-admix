@@ -6,7 +6,7 @@
   versions: !include versions.yaml
   vendor_source: https://github.com/protocolbuffers/protobuf/archive/v{{version}}.{{extension}}
   description: |
-    Protocol Buffers are Google's data interchange format. This is a "classic" version used 
+    Protocol Buffers are Google's data interchange format. This is a classic version used 
     by older software packages. It is built with system gcc
   build:
     preconfigure: autoreconf -i
