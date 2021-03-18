@@ -22,3 +22,7 @@
       - openmpi
       - openmpi-devel
       - rcic-module-support
+    setenv:
+      - OMPI_MCA_pml "^ucx"
+      - OMPI_MCA_btl_openib_allow_ib true
+      - OMPI_MCA_btl_openib_warn_no_device_params_found 0

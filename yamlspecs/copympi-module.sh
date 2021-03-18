@@ -8,7 +8,6 @@ SETENV='    setenv: '
 PREPEND='    prepend_path: '
 
 cat $SKEL_MODULE
-echo "$SETENV" 
 awk '/setenv/{print "      - " $2, $3}' $OMPI_MODULE
 echo "$PREPEND" 
 awk '/prepend-path/{print "      - " $2, $3}' $OMPI_MODULE
