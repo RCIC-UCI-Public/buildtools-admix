@@ -17,3 +17,7 @@ likwid: "5.0.1"
 nodejs: "12.16.3"
 asciidoctor: "2.0.10"
 protobuf: "2.4.1"
+intel_compiler: 
+  shortversion: "2020u1"
+  longversion: "2020.1.217"
+  arch: "intel64"

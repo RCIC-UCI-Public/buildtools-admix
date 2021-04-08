@@ -1,0 +1,57 @@
+# This is the intel compiler module
+# must be included in specific yaml file
+!include rcic-package.yaml
+!include rcic-module.yaml
+---
+- package: intel compiler module 
+  category: COMPILERS
+  name: intel 
+  versions: !include versions.yaml
+  version: "{{versions.intel_compiler.shortversion}}"
+  intelarch: "{{versions.intel_compiler.arch}}"
+  release: "2"
+  description: |
+      Intel Studio XE Compilers(R) version {{version}}. 
+      Provides Fortran, C, C++ compilers 
+  root: "/data/opt/apps/intel/{{version}}"
+  toolpath: "{{root}}/compilers_and_libraries/linux"
+  toolpath_full: "{{root}}/compilers_and_libraries_{{versions.intel_compiler.longversion}}/linux"
+  shortname: INTEL{{version}}
+  module:
+    setenv:  
+      - "{{shortname}} {{toolpath}}"
+      - "{{shortname}}__PREFIX {{toolpath}}"
+      - "{{shortname}}__CPPFLAGS -I{{toolpath}}/include"
+      - "{{shortname}}__LDFLAGS \"-L{{toolpath}}/{{module.lib}}/{{intelarch}} -Wl,-rpath,{{toolpath}}/{{module.lib}}/{{intelarch}}\""
+      - CC {{toolpath}}/bin/{{intelarch}}/icc
+      - CXX {{toolpath}}/bin/{{intelarch}}/icc
+      - FC  {{toolpath}}/bin/{{intelarch}}/ifort
+      - F77 {{toolpath}}/bin/{{intelarch}}/ifort
+      - F90 {{toolpath}}/bin/{{intelarch}}/ifort
+    prepend_path:
+      - PATH {{toolpath}}/bin
+      - PATH {{toolpath}}/bin/{{intelarch}}
+      - LD_LIBRARY_PATH  {{toolpath}}/{{module.lib}}/{{intelarch}}
+      - LIBRARY_PATH  {{toolpath}}/{{module.lib}}/{{intelarch}}
+      - PKG_CONFIG_PATH {{toolpath_full}}/mkl/bin/pkgconfig
+      - -d " " LDFLAGS -L{{toolpath}}/{{module.lib}}/{{intelarch}} -Wl,-rpath,{{toolpath}}/{{module.lib}}/{{intelarch}}
+      - -d " " LDFLAGS -L{{toolpath_full}}/mkl/lib/intel64 -Wl,-rpath,{{toolpath_full}}/mkl/lib/intel64
+      - -d " " LDFLAGS -L{{toolpath_full}}/tbb/lib/intel64 -Wl,-rpath,{{toolpath_full}}/tbb/lib/intel64
+      - -d " " CPPFLAGS -I{{toolpath_full}}/mkl/include
+      - LD_RUN_PATH  {{toolpath_full}}/tbb/lib/intel64
+      - LD_RUN_PATH  {{toolpath_full}}/mkl/lib/intel64
+      - LD_RUN_PATH  {{toolpath}}/lib/intel64
+    requires:
+      - rcic-module-support
+# NFS APP doesn't have an RPM for the compiler itself, for others that require
+# intel compiler by name, report that this RPM provides that compiler
+# and libraries. Add more libraries as needed
+  provides:
+    - "{{name}}/{{version}}"
+    - "{{name}}_{{version}}"
+    - libsvml.so()(64bit)
+    - libirng.so()(64bit)
+    - libimf.so()(64bit)
+    - libifcoremt.so.5()(64bit)
+    - libifport.so.5()(64bit)
+    - libintlc.so.5()(64bit)

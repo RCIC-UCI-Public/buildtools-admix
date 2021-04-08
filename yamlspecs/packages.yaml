@@ -11,6 +11,7 @@ build:
   - java7-module
   - java8-module
   - java11-module
+  - intel-compiler-module
   - intel-tbb
   - intel-tbb-module
   - icu
