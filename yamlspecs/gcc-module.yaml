@@ -1,8 +1,8 @@
-# Builds the module for the system-defined gcc. 
+# module for the system-defined gcc
 !include rcic-package.yaml
 !include rcic-module.yaml
 ---
-- package: GCC Module
+- package: GCC module
   category: COMPILERS
   name: gcc
   release: 4
@@ -10,7 +10,8 @@
   version: "{{versions.gcc}}"
   pkgname: "{{name}}_{{version}}-module"
   description: |
-    Module file for system defined GCC version {{version}}. Changes with major OS version changes
+    Module file for system defined GCC version {{version}}.
+    Changes with major OS version changes
   root: "/usr"
   module:
     setenv:
@@ -23,12 +24,10 @@
       - FC  {{root}}/bin/gfortran
       - F77  {{root}}/bin/gfortran
       - F90  {{root}}/bin/gfortran
-    prepend_path: ""
-
+    prepend_path:
     requires:
       - "{{name}}"
       - rcic-module-support
-
   provides:
     - "{{name}}_{{version}}"
     - "{{name}}/{{version}}"

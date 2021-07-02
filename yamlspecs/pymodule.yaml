@@ -8,7 +8,6 @@
   pkgname: "python-{{name}}"
   root: "{{pkg_defaults.python_pkgs}}"
   build:
-    configure: echo No configure required
     pkgmake: python ./setup.py  
     target: build
   install:

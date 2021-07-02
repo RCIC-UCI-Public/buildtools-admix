@@ -1,8 +1,7 @@
-# Builds the module for intel-tbb.
 !include intel-tbb.yaml
 !include rcic-module.yaml
 ---
-- package: intel-tbb Module
+- package: intel-tbb module
   category: COMPILERS
   shortname: inteltbb
   extlib: intel64/gcc4.7

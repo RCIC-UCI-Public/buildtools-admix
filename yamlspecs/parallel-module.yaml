@@ -1,8 +1,7 @@
-# Builds the module for parallel.
 !include parallel.yaml
 !include rcic-module.yaml
 ---
-- package: parallel Module
+- package: parallel module
   category: TOOLS
   release: 2
   module:

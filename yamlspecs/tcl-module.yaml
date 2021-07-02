@@ -1,7 +1,6 @@
-# Builds the module for tcl.
 !include tcl.yaml
 !include rcic-module.yaml
 ---
-- package: tcl Module
+- package: tcl module
   category: LANGUAGES
   release: 2

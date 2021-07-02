@@ -1,7 +1,8 @@
-# Builds the module for tk.
 !include tk.yaml
 !include rcic-module.yaml
 ---
 - package: tk Module
   category: LANGUAGES
   release: 2
+  module:
+    prereq: ""

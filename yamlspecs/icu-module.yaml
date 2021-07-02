@@ -2,6 +2,6 @@
 !include icu.yaml
 !include rcic-module.yaml
 ---
-- package: icu Module
+- package: icu module
   category: TOOLS
   release: 2
