@@ -17,7 +17,7 @@
   root: "/usr"
   module:
     <<: *ModuleCompiler
-    prereq: ""
+    prereq:
     requires:
       - openmpi
       - openmpi-devel

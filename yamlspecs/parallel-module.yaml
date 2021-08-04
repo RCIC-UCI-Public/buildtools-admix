@@ -5,7 +5,7 @@
   category: TOOLS
   release: 2
   module:
-    setenv: ""
+    setenv:
     prepend_path: 
       - PATH {{root}}/bin
       - MANPATH {{root}}/share/man
