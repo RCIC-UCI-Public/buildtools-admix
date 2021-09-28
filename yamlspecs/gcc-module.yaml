@@ -4,10 +4,10 @@
 ---
 - package: GCC module
   category: COMPILERS
-  name: gcc
   release: 4
   versions: !include versions.yaml
-  version: "{{versions.gcc}}"
+  name: "{{versions.compiler.name}}"
+  version: "{{versions.compiler.version}}"
   pkgname: "{{name}}_{{version}}-module"
   description: |
     Module file for system defined GCC version {{version}}.

@@ -9,8 +9,8 @@
   category: COMPILERS
   release: 3
   versions: !include versions.yaml
-  compiler: gcc 
-  compiler_version: "{{versions.gcc}}"
+  compiler: "{{versions.compiler.name}}"
+  compiler_version: "{{versions.compiler.version}}"
   description: |
     Module file for system defined Openmpi version {{version}} compiled
     with GCC version {{compiler_version}}. Changes with major OS version changes
