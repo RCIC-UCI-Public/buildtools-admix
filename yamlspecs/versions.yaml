@@ -1,6 +1,6 @@
+!include site.yaml
 ---
 compiler:
-  name: gcc
   version: "4.8.5"
 tcl: "8.6.9"
 tk: "8.6.9"
@@ -9,7 +9,7 @@ java8: "1.8.0"
 java11: "11"
 setuptools: "41.0.0"
 tbb:
-  ver: "20190605"
+  version: "20190605"
   index: "tbb2019_20190605oss"
 icu: 
   version: "65.1"

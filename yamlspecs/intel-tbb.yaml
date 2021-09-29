@@ -3,7 +3,7 @@
 - package: Intel Threading Building Blocks 
   name: intel-tbb 
   versions: !include versions.yaml
-  version: "{{versions.tbb.ver}}"
+  version: "{{versions.tbb.version}}"
   version_full: "{{versions.tbb.index}}"
   extension: tgz
   vendor_source: https://github.com/intel/tbb/releases/download/2019_U8/{{version_full}}_lin.{{extension}}
