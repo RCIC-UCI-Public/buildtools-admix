@@ -10,3 +10,4 @@
     by older software packages. It is built with system gcc
   build:
     preconfigure: autoreconf -i
+    configure: ./configure

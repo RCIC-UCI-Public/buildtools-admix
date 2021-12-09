@@ -1,7 +1,7 @@
 !include site.yaml
 ---
 compiler:
-  version: "4.8.5"
+  version: "{{versions.compiler_sys.version}}"
 tcl: "8.6.9"
 tk: "8.6.9"
 java7: "1.7.0"
@@ -9,7 +9,7 @@ java8: "1.8.0"
 java11: "11"
 setuptools: "41.0.0"
 tbb:
-  version: "20190605"
+  version: "{{versions.intel_tbb}}"
   index: "tbb2019_20190605oss"
 icu: 
   version: "65.1"

@@ -1,4 +1,5 @@
 !include rcic-package.yaml
+!include rpm.yaml
 ---
 - package: GNU parallel shell tool international components for unicode 
   name: parallel 
@@ -18,3 +19,6 @@
     makeinstall: >
        mkdir -p $(ROOT){{root}};
        make install DESTDIR=$(ROOT)
+  addfile:
+    - filter-requires-{{name}}.sh
+  rpmFilters: *filterRequires

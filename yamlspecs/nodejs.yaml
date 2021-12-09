@@ -37,3 +37,5 @@
      - "{{root}}/share/man/man1/*"
      - "{{root}}/share/systemtap/tapset/*"
 
+  rpm:
+     extras: "%define __brp_mangle_shebangs /bin/echo turn off shebang mangling"

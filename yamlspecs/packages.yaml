@@ -1,14 +1,16 @@
 ---
+site: !include site.yaml
 system:
   - openmpi
   - libX11-devel
   - autoconf
+  - lua-devel
+  - !ifeq "{{site.os_release}},8,perl-Text-Balanced,}}"
 bootstrap:
   - gcc-module
   - tcl
   - tcl-module
 build:
-  - java7-module
   - java8-module
   - java11-module
   - intel-compiler-module
@@ -17,7 +19,6 @@ build:
   - icu
   - icu-module
   - openmpi-module
-  - setuptools
   - tk
   - tk-module
   - parallel
@@ -25,8 +26,10 @@ build:
   - likwid
   - likwid-module
   - nodejs
-  - protobuf-classic
-  - protobuf-classic-module
+  - !ifeq "{{site.os_release}},8,,protobuf-classic"
+  - !ifeq "{{site.os_release}},8,,protobuf-classic-module"
+  - !ifeq "{{site.os_release}},8,,setuptools}}"
+  - !ifeq "{{site.os_release}},8,,java7-module}}"
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
