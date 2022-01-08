@@ -13,6 +13,7 @@ bootstrap:
 build:
   - java8-module
   - java11-module
+  - !ifeq "{{site.os_release}},8,java17-module,"
   - intel-compiler-module
   - intel-tbb
   - intel-tbb-module
