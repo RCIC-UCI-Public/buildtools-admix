@@ -6,7 +6,7 @@
   version: "{{versions.icu.version}}"
   tarversion: "{{versions.icu.tarversion}}"
   dirname: "{{name}}-release-{{tarversion}}"
-  vendor_source: https://github.com/unicode-org/icu/archive/{{dirname}}.{{extension}}
+  vendor_source: https://github.com/unicode-org/icu/archive/release-{{tarversion}}.{{extension}}
   src_dir:  "{{dirname}}/icu4c/source"
   description: |
     ICU is the premier library for software internationalization, used by a wide array of companies and organizations.
