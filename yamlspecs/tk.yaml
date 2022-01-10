@@ -4,8 +4,8 @@
   name: tk
   versions: !include versions.yaml
   version: "{{versions.tk}}"
-  suffix: 1-src
-  vendor_source: https://prdownloads.sourceforge.net/tcl/{{name}}{{version}}.{{suffix}}.{{extension}}
+  suffix: -src
+  vendor_source: https://prdownloads.sourceforge.net/tcl/{{name}}{{version}}{{suffix}}.{{extension}}
   src_dir: "{{name}}{{version}}"
   parent: "{{pkg_defaults.app_path}}/tcl"
   description: |
