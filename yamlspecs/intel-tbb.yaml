@@ -4,9 +4,9 @@
   name: intel-tbb 
   versions: !include versions.yaml
   version: "{{versions.tbb.version}}"
-  version_full: "{{versions.tbb.index}}"
+  version_full: "{{versions.tbb.index}}-{{version}}"
   extension: tgz
-  vendor_source: https://github.com/intel/tbb/releases/download/2019_U8/{{version_full}}_lin.{{extension}}
+  vendor_source: https://github.com/oneapi-src/oneTBB/releases/download/v{{version}}/{{version_full}}-lin.{{extension}}
   description: |
     Intel Threading Building Blocks {{version}}. Threading Building Blocks (TBB) lets you easily 
     write parallel C++ programs that take full advantage of multicore performance, that are portable,
