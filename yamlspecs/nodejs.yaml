@@ -1,7 +1,11 @@
+# NOTE: even when specified as conflicts (or obsolete) the newly build RPM conflicts
+# during install with /usr/lib/node_modules/npm/man file that is installed by npm RPM.
+# Manually remove npm, nodejs and nodejs-full-i18n RPMs before installing newer nodejs.
 !include rcic-package.yaml
 ---
 - package: nodejs 
   name: nodejs 
+  conflicts: "npm nodejs nodejs-full-i18n"
   versions: !include versions.yaml
   version: "{{versions.nodejs}}"
   extension: tar.xz 
@@ -10,17 +14,10 @@
   description: |
     Node.js {{version}} is an asynchronous event-driven JavaScript runtime, 
     Node.js is designed to build scalable network applications. 
-
-  pkgname: "{{name}}"
+  pkgname: "{{name}}_{{version}}"
   root: /usr
-
   no_src_dir: True
   src_tarball: "{{tardir}}.{{extension}}"
-  build:
-    configure: "echo no configure required" 
-    modules: 
-    target: 
-    pkgmake: echo "prebuilt tarball"
   install:
     makeinstall: >
        mkdir -p $(ROOT)/{{root}};
@@ -28,7 +25,6 @@
        mv  $(ROOT)/{{root}}/CHANGELOG.md $(ROOT)/{{root}}/share/doc/node;
        mv  $(ROOT)/{{root}}/README.md $(ROOT)/{{root}}/share/doc/node;
        mv  $(ROOT)/{{root}}/LICENSE $(ROOT)/{{root}}/share/doc/node
-   
   files:
      - "{{root}}/bin/*"
      - "{{root}}/include/*"
@@ -36,6 +32,5 @@
      - "{{root}}/share/doc/*"
      - "{{root}}/share/man/man1/*"
      - "{{root}}/share/systemtap/tapset/*"
-
   rpm:
      extras: "%define __brp_mangle_shebangs /bin/echo turn off shebang mangling"
