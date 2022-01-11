@@ -18,7 +18,6 @@ icu:
 parallel: "20211222"
 likwid: "5.2.1"
 nodejs: "17.3.0"
-asciidoctor: "2.0.10"
 protobuf: "2.4.1"
 intel_compiler: 
   shortversion: "2020u1"
