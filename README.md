@@ -24,11 +24,11 @@ For CentOS 8 versions are usually newer where available.
 
 1. packages built only on CentOS 7
 
-- protobuf-classic
-- protobuf-classic-module
-- setuptools
-- java7-module
+   - protobuf-classic
+   - protobuf-classic-module
+   - setuptools
+   - java7-module
 
 1. packages built only on CentOS 8
 
-- java17-module
+   - java17-module
