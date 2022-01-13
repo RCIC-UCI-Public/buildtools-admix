@@ -5,7 +5,6 @@ system:
   - libX11-devel
   - autoconf
   - lua-devel
-  - !ifeq "{{site.os_release}},8,perl-Text-Balanced,"
 bootstrap:
   - gcc-module
   - tcl
