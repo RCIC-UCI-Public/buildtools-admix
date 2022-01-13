@@ -12,6 +12,7 @@ setuptools: "41.0.0"
 tbb:
   version: "{{versions.intel_tbb}}"
   index: "oneapi-tbb"
+  intel64: !ifeq "{{versions.tbb.version}},20190605,4.7,4.8"
 icu: 
   version: "70.1"
   tarversion: "70-1"
