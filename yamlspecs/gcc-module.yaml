@@ -10,8 +10,8 @@
   version: "{{versions.compiler.version}}"
   pkgname: "{{name}}_{{version}}-module"
   description: |
-    Module file for system defined GCC version {{version}}.
-    Changes with major OS version changes
+    Module file for system defined GCC.
+    GCC version changes with systm RPMS updates
   root: "/usr"
   module:
     setenv:

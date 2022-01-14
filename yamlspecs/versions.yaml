@@ -1,6 +1,7 @@
 !include site.yaml
 ---
 compiler:
+  name: "{{versions.compiler_sys.name}}"
   version: "{{versions.compiler_sys.version}}"
 tcl: "8.6.12"
 tk: "8.6.12"
