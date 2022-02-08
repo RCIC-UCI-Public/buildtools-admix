@@ -22,6 +22,9 @@
       - openmpi
       - openmpi-devel
       - rcic-module-support
+    provides:
+      - "{{module.logname}}"
+      - "{{name}}_{{version}}_{{compiler}}_{{compiler_version}}"
     setenv:
       - OMPI_MCA_pml "^ucx"
       - OMPI_MCA_btl_openib_allow_ib true
