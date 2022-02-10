@@ -1,0 +1,14 @@
+!include versions.yaml
+---
+tcl: "8.6.12"
+tk: "8.6.12"
+java17: "17"
+tbb:
+  version: "2021.5.0"
+  intel64: "4.8"
+icu: 
+  version: "70.1"
+  tarversion: "70-1"
+parallel: "20211222"
+likwid: "5.2.1"
+nodejs: "17.3.0"

@@ -1,0 +1,22 @@
+!include packages.yaml
+---
+versions: versions-centos8.yaml
+bootstrap:
+  - tcl
+  - tcl-module
+build:
+  - java17-module
+  - intel-tbb
+  - intel-tbb-module
+  - icu
+  - icu-module
+  - tk
+  - tk-module
+  - parallel
+  - parallel-module
+  - likwid
+  - likwid-module
+  - nodejs
+manifest:
+  - "{{bootstrap}}"
+  - "{{build}}"
