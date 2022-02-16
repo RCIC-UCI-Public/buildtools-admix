@@ -1,0 +1,3 @@
+!include versions.yaml
+---
+singularity: "3.7.2"

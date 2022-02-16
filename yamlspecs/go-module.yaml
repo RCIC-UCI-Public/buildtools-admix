@@ -1,0 +1,10 @@
+!include go.yaml
+!include rcic-module.yaml
+---
+- package: Go module
+  category: LANGUAGES
+  release: 2
+  module:
+    prepend_path:
+      - PATH {{root}}/bin
+    prereq:

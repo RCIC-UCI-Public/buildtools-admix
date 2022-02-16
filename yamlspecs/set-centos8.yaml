@@ -4,6 +4,8 @@ versions: versions-centos8.yaml
 bootstrap:
   - tcl
   - tcl-module
+  - go
+  - go-module
 build:
   - java17-module
   - intel-tbb
@@ -17,6 +19,8 @@ build:
   - likwid
   - likwid-module
   - nodejs
+  - singularity
+  - singularity-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

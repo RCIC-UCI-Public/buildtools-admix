@@ -1,0 +1,21 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: Singularity Container Runtime 
+  name: singularity 
+  versions: !include versions.yaml
+  version: "{{versions.singularity}}"
+  vendor_source: https://github.com/sylabs/singularity/archive/v{{version}}.tar.gz 
+  description: |
+    Singularity {{version}}. Built with go version {{versions.go}}
+  parent: "{{pkg_defaults.foundation}}/{{name}}"
+  build:
+    configure: ./mconfig 
+    configure_args: --prefix={{root}}
+    target: -C builddir 
+    modules: go/{{versions.go}}
+  install:
+    makeinstall: make DESTDIR=$(ROOT) -C builddir install
+    installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{root}}
+  requires:
+    - squashfs-tools  
