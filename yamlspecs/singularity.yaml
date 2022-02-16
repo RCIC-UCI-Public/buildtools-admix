@@ -8,7 +8,6 @@
   vendor_source: https://github.com/sylabs/singularity/archive/v{{version}}.tar.gz 
   description: |
     Singularity {{version}}. Built with go version {{versions.go}}
-  parent: "{{pkg_defaults.foundation}}/{{name}}"
   build:
     configure: ./mconfig 
     configure_args: --prefix={{root}}
