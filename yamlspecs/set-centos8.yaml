@@ -21,6 +21,8 @@ build:
   - nodejs
   - singularity
   - singularity-module
+  - lz4
+  - lz4-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

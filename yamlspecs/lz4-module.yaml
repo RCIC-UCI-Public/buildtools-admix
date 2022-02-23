@@ -1,0 +1,6 @@
+# Builds the module for lz4.
+!include lz4.yaml
+!include rcic-module.yaml
+---
+- package: lz4 module
+  category: TOOLS

@@ -1,0 +1,19 @@
+!include rcic-package.yaml
+---
+- package: lz4 compression  
+  name: lz4 
+  versions: !include versions.yaml
+  version: "{{versions.lz4}}"
+  vendor_source: https://github.com/{{name}}/{{name}}/archive/refs/tags/v{{version}}.{{extension}}
+
+  description: |
+    LZ4 {{version}} is a lossless compression algorithm, providing compression speed > 500 MB/s per core, 
+    scalable with multi-cores CPU. It features an extremely fast decoder, with speed in multiple GB/s per core, 
+    typically reaching RAM speed limits on multi-core systems.
+  build:
+    pkgmake: make 
+    target: 
+  install:
+    makeinstall: >
+       mkdir -p $(ROOT){{root}};
+       make DESTDIR=$(ROOT) PREFIX={{root}} install
