@@ -18,5 +18,5 @@
     setenv: 
       - JAVA_HOME {{root}}/java-{{version}}
     requires:
-      - "{{name}}-{{version}}-openjdk"
+      - "{{name}}-{{version}}-openjdk-devel"
       - rcic-module-support
