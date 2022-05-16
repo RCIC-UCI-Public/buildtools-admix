@@ -3,8 +3,8 @@
 - package: Intel Threading Building Blocks 
   name: intel-tbb 
   versions: !include versions.yaml
-  version: "{{versions.tbb.version}}"
-  version_full: "{{versions.tbb.index}}-{{version}}"
+  version: "{{versions.inteltbb.version}}"
+  version_full: "{{versions.inteltbb.index}}-{{version}}"
   extension: tgz
   vendor_source: https://github.com/oneapi-src/oneTBB/releases/download/v{{version}}/{{version_full}}-lin.{{extension}}
   description: |

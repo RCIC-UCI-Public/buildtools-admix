@@ -4,7 +4,7 @@
 - package: intel-tbb module
   category: COMPILERS
   shortname: inteltbb
-  extlib: intel64/gcc{{versions.tbb.intel64}}
+  extlib: intel64/gcc{{versions.inteltbb.intel64}}
   release: 2
   module:
     setenv:
