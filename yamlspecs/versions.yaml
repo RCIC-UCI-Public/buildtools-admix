@@ -9,7 +9,7 @@ java7: "1.7.0"
 java8: "1.8.0"
 java11: "11"
 setuptools: "41.0.0"
-tbb:
+inteltbb:
   version: "20190605"
   index: "oneapi-tbb"
   intel64: "4.7"
