@@ -11,15 +11,11 @@ bootstrap:
   - tcl-module
   - go
   - go-module
-build:
-  - java8-module
-  - java11-module
-  - intel-compiler-module
+common:
   - intel-tbb
   - intel-tbb-module
   - icu
   - icu-module
-  - openmpi-module
   - tk
   - tk-module
   - parallel
@@ -27,12 +23,18 @@ build:
   - likwid
   - likwid-module
   - nodejs
+  - singularity
+  - singularity-module
+build:
+  - java8-module
+  - java11-module
+  - intel-compiler-module
+  - openmpi-module
+  - "{{common}}"
   - !ifeq "{{site.os_release}},8,,protobuf-classic"
   - !ifeq "{{site.os_release}},8,,protobuf-classic-module"
   - !ifeq "{{site.os_release}},8,,setuptools"
   - !ifeq "{{site.os_release}},8,,java7-module"
-  - singularity
-  - singularity-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

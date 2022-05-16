@@ -4,25 +4,8 @@ versions: versions-centos8.yaml
 bootstrap:
   - tcl
   - tcl-module
-  - go
-  - go-module
 build:
   - java17-module
-  - intel-tbb
-  - intel-tbb-module
-  - icu
-  - icu-module
-  - tk
-  - tk-module
-  - parallel
-  - parallel-module
-  - likwid
-  - likwid-module
-  - nodejs
-  - singularity
-  - singularity-module
+  - "{{common}}"
   - lz4
   - lz4-module
-manifest:
-  - "{{bootstrap}}"
-  - "{{build}}"
