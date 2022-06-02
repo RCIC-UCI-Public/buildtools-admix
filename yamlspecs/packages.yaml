@@ -16,8 +16,6 @@ common:
   - intel-tbb-module
   - icu
   - icu-module
-  - tk
-  - tk-module
   - parallel
   - parallel-module
   - likwid
