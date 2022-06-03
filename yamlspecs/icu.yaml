@@ -1,4 +1,5 @@
 !include rcic-package.yaml
+!include rpm.yaml
 ---
 - package: icu international components for unicode 
   name: icu 
@@ -8,6 +9,7 @@
   dirname: "{{name}}-release-{{tarversion}}"
   vendor_source: https://github.com/unicode-org/icu/archive/release-{{tarversion}}.{{extension}}
   src_dir:  "{{dirname}}/icu4c/source"
+  rpmBuildIdLinks: none
   description: |
     ICU is the premier library for software internationalization, used by a wide array of companies and organizations.
   build:

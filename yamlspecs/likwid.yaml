@@ -1,10 +1,12 @@
 !include rcic-package.yaml
+!include rpm.yaml
 ---
 - package: likwid 
   name: likwid
   versions: !include versions.yaml
   version: "{{versions.likwid}}"
   vendor_source: https://github.com/RRZE-HPC/likwid/archive/v{{version}}.{{extension}}
+  rpmBuildIdLinks: none
   description: |
       Likwid {{version}} is a simple to install and use toolsuite of command-line 
       applications for performance oriented programmers. It works for Intel, AMD, ARMv8 and 
