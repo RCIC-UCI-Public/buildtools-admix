@@ -5,6 +5,9 @@ tk: "8.6.12"
 java17: "17"
 inteltbb:
   version: "2021.5.0"
+  index: "oneapi-tbb"
+  sep: "-"
+  postfix: ""
   intel64: "4.8"
 icu: 
   version: "70.1"

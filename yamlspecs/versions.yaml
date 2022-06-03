@@ -11,7 +11,9 @@ java11: "11"
 setuptools: "41.0.0"
 inteltbb:
   version: "20190605"
-  index: "oneapi-tbb"
+  index: "tbb2019"
+  sep: "_"
+  postfix: "oss"
   intel64: "4.7"
 icu: 
   version: "65.1"

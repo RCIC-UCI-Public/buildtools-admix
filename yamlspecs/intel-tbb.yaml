@@ -4,7 +4,7 @@
   name: intel-tbb 
   versions: !include versions.yaml
   version: "{{versions.inteltbb.version}}"
-  version_full: "{{versions.inteltbb.index}}-{{version}}"
+  version_full: "{{versions.inteltbb.index}}{{versions.inteltbb.sep}}{{version}}{{versions.inteltbb.postfix}}"
   extension: tgz
   vendor_source: https://github.com/oneapi-src/oneTBB/releases/download/v{{version}}/{{version_full}}-lin.{{extension}}
   description: |
