@@ -23,7 +23,6 @@ common:
   - parallel-module
   - likwid
   - likwid-module
-  - nodejs
   - singularity
   - singularity-module
 build:
@@ -32,6 +31,7 @@ build:
   - intel-compiler-module
   - openmpi-module
   - "{{common}}"
+  - nodejs
   - !ifeq "{{site.os_release}},8,,protobuf-classic"
   - !ifeq "{{site.os_release}},8,,protobuf-classic-module"
   - !ifeq "{{site.os_release}},8,,setuptools"

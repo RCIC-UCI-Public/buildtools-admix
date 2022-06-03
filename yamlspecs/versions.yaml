@@ -20,7 +20,8 @@ icu:
   tarversion: "65-1"
 parallel: "20200222"
 likwid: "5.0.1"
-nodejs: "14.18.2"
+# nodejs: "14.18.2"
+nodejs: "17.3.0"
 protobuf: "2.4.1"
 intel_compiler: 
   shortversion: "2020u1"
