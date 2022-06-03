@@ -5,6 +5,8 @@ system:
   - libX11-devel
   - autoconf
   - lua-devel
+  - openssl-devel
+  - libuuid-devel
 bootstrap:
   - gcc-module
   - tcl
