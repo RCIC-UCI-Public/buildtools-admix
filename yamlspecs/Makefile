@@ -9,6 +9,8 @@ include $(YAML2RPM_HOME)/sys/Makefile
 openmpi-module.yaml: copympi-module.sh openmpi-module.yaml.in
 	sh copympi-module.sh > $@	
 
+manifest :: openmpi-module.yaml
+
 default: openmpi-module.yaml
 	make -f $(THISMAKE) $(PKGS)
 
