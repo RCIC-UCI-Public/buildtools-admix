@@ -14,6 +14,5 @@ icu:
   tarversion: "70-1"
 parallel: "20211222"
 likwid: "5.2.1"
-nodejs: "17.3.0"
 singularity: "3.9.4"
 lz4: "1.9.3"  
