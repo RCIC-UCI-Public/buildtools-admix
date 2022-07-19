@@ -1,0 +1,84 @@
+!include rcic-package.yaml
+!include rcic-module.yaml
+---
+- package: intel-oneapi compiler module 
+  category: COMPILERS
+  name: intel
+  versions: !include versions.yaml
+  version: "{{versions.oneAPI.version}}"
+  toolversion: "{{versions.oneAPI.toolversion}}"
+  hpcversion: "{{versions.oneAPI.hpcversion}}"
+  vendor_source: https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html
+  description: |
+      Intel (R) oneAPI Base and oneAPI HPC Toolkits version {{versions.oneAPI.version}}
+      products will deliver the tools needed to deploy applications
+      and solutions across SVMS architectures. Its set of complementary
+      toolkits - a base kit and specialty add-ons - simplify programming
+      and help developers improve efficiency and innovation.
+      Provides Fortran, C, C++ compilers. Specific tools versions vary.
+  root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{version}}"
+  toolpath: "{{root}}/compiler/{{toolversion}}"
+  toolpath_full: "{{root}}/compiler/{{toolversion}}/linux"
+  tbbpath: "{{root}}/tbb/{{hpcversion}}"
+  mklpath: "{{root}}/mkl/{{toolversion}}"
+  module:
+    setenv: 
+      - CMPLR_ROOT {{root}}/compiler/{{toolversion}}
+      - TBBROOT {{tbbpath}}
+      - MKLROOT {{mklpath}}
+      - CC  {{toolpath_full}}/bin/intel64/icc
+      - CXX {{toolpath_full}}/bin/intel64/icc
+      - FC  {{toolpath_full}}/bin/intel64/ifort
+      - F77 {{toolpath_full}}/bin/intel64/ifort
+      - F90 {{toolpath_full}}/bin/intel64/ifort
+    prepend_path:
+      - CPATH {{tbbpath}}/include
+      - CPATH {{mklpath}}/include
+      - DIAGUTIL_PATH {{root}}/compiler/{{toolversion}}/sys_check/sys_check.sh
+      - MANPATH {{toolpath}}/documentation/en/man/common
+      - NLSPATH {{toolpath_full}}/compiler/lib/intel64_lin/locale/%l_%t/%N
+      - NLSPATH {{mklpath}}/lib/intel64/locale/%l_%t/%N
+      - PKG_CONFIG_PATH {{mklpath}}/lib/pkgconfig
+      - CMAKE_PREFIX_PATH {{tbbpath}}
+      - CMAKE_PREFIX_PATH {{toolpath_full}}/IntelDPCPP
+      - LIBRARY_PATH {{tbbpath}}/lib/intel64/gcc4.8
+      - LIBRARY_PATH {{mklpath}}/lib/intel64
+      - LIBRARY_PATH {{toolpath_full}}/lib
+      - LD_LIBRARY_PATH {{tbbpath}}/lib/intel64/gcc4.8
+      - LD_LIBRARY_PATH {{mklpath}}/lib/intel64
+      - LD_LIBRARY_PATH {{toolpath_full}}/compiler/lib/intel64_lin
+      - LD_LIBRARY_PATH {{toolpath_full}}/lib/x64
+      - LD_LIBRARY_PATH {{toolpath_full}}/lib
+      - PATH {{toolpath_full}}/bin
+      - PATH {{toolpath_full}}/bin/intel64
+      - -d " " LDFLAGS -L{{toolpath_full}}/compiler/lib/intel64_lin -Wl,-rpath,{{toolpath_full}}/compiler/lib/intel64_lin
+      - -d " " LDFLAGS -L{{tbbpath}}/lib/intel64 -Wl,-rpath,{{tbbpath}}/lib/intel64
+      - -d " " LDFLAGS -L{{mklpath}}/lib/intel64 -Wl,-rpath,{{mklpath}}/lib/intel64
+      - LD_RUN_PATH  {{toolpath_full}}/compiler/lib/intel64_lin
+      - LD_RUN_PATH  {{tbbpath}}/lib/intel64
+      - LD_RUN_PATH  {{mklpath}}/lib/intel64
+    requires:
+      - rcic-module-support
+  provides:
+    - "{{name}}/{{version}}"
+    - "{{name}}_{{version}}"
+    - libsvml.so()(64bit)
+    - libirng.so()(64bit)
+    - libimf.so()(64bit)
+    - libifcoremt.so.5()(64bit)
+    - libifport.so.5()(64bit)
+    - libintlc.so.5()(64bit)
+
+# keep for reference
+# original intel-created module for compiler/2022.2  loads  oclfpga module 
+# and sets related variables. Listing what it would have been in our structure
+# so far all compiles  work without these variables
+# equivalents for setenv
+#     - ACL_BOARD_VENDOR_PATH /opt/Intel/OpenCLFPGA/oneAPI/Boards
+#     - INTELFPGAOCLSDKROOT {{toolpath_full}}/lib/oclfpga
+# equivalents for prepend-path 
+#     - PATH {{toolpath_full}}/lib/oclfpga/bin
+#     - LD_LIBRARY_PATH {{toolpath_full}}/lib/oclfpga/host/linux64/lib
+#     - OCL_ICD_FILENAMES libalteracl.so
+#     - OCL_ICD_FILENAMES libintelocl_emu.so
+#     - OCL_ICD_FILENAMES {{toolpath_full}}/lib/x64/libintelocl.so

@@ -11,3 +11,4 @@ build:
   - lz4-module
   - tk
   - tk-module
+  - intel-oneapi-module

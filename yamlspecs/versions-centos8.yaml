@@ -16,3 +16,8 @@ parallel: "20211222"
 likwid: "5.2.1"
 singularity: "3.9.4"
 lz4: "1.9.3"  
+oneAPI:
+  nfspath: "/data/opt/apps"
+  version: "2022.2"
+  toolversion: "2022.1.0"
+  hpcversion: "2021.6.0"
