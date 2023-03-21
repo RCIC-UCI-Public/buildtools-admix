@@ -42,3 +42,4 @@ manifest:
 sets:
   - singularity
   - centos8
+  - "2023"

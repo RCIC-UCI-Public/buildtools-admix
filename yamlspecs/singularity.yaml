@@ -9,7 +9,9 @@
   description: |
     Singularity {{version}}. Built with go version {{versions.go}}
   build:
-    configure: ./mconfig 
+    configure: >
+       if [ -d third_party ]; then git clone --recurse-submodules https://github.com/containers/conmon third_party/conmon; fi;
+       ./mconfig
     configure_args: --prefix={{root}}
     target: -C builddir 
     modules: go/{{versions.go}}
