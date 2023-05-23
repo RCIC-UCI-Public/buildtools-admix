@@ -1,4 +1,4 @@
 !include versions.yaml
 ---
-singularity: "3.11.1"
-go: "1.20.2"
+singularity: "3.11.3"
+go: "1.20.4"
