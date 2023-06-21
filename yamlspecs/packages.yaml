@@ -8,6 +8,7 @@ system:
   - openssl-devel
   - libuuid-devel
   - perl-Text-Balanced
+  - glib2-devel
 bootstrap:
   - gcc-module
   - tcl
