@@ -1,0 +1,59 @@
+# This is the CUDA SDK  module
+!include rcic-package.yaml
+!include rcic-module.yaml
+---
+- package: cudasdk module 
+  release: 2
+  category: COMPILERS
+  name: cudasdk 
+  versions: !include versions.yaml
+  version: "{{versions.cudasdk}}"
+  vendor_source: "https://developer.nvidia.com/nvidia-hpc-sdk-releases"
+  description: |
+    The NVIDIA HPC Software Development Kit (SDK) {{version}} includes the 
+    nvfortran and pgfortran compilers, libraries and software tools
+    essential to the performance and portability of HPC applications. 
+    See release info https://developer.nvidia.com/nvidia-hpc-sdk-releases.
+    See SDK docs https://developer.nvidia.com/hpc-sdk and using CUDA fortran
+    guide https://docs.nvidia.com/hpc-sdk/compilers/cuda-fortran-prog-guide
+  nvhome: "{{versions.nfspath}}/nvhpc/{{version}}"
+  root: "{{nvhome}}/Linux_x86_64/{{version}}"
+  nvcudadir: "{{root}}/cuda"
+  nvcompdir: "{{root}}/compilers"
+  nvmathdir: "{{root}}/math_libs"
+  nvcommdir: "{{root}}/comm_libs"
+  module:
+    prepend_path:
+      - PATH {{nvcudadir}}/bin
+      - PATH {{nvcompdir}}/bin
+      - PATH {{nvcommdir}}/mpi/bin
+      - PATH {{nvcompdir}}/extras/qd/bin
+      - LD_LIBRARY_PATH {{nvcudadir}}/lib64
+      - LD_LIBRARY_PATH {{nvcudadir}}/extras/CUPTI/lib64
+      - LD_LIBRARY_PATH {{nvcompdir}}/extras/qd/lib
+      - LD_LIBRARY_PATH {{nvcompdir}}/lib
+      - LD_LIBRARY_PATH {{nvmathdir}}/lib64
+      - LD_LIBRARY_PATH {{nvcommdir}}/mpi/lib
+      - LD_LIBRARY_PATH {{nvcommdir}}/nccl/lib
+      - LD_LIBRARY_PATH {{nvcommdir}}/nvshmem/lib
+      - CPATH {{nvmathdir}}/include
+      - CPATH {{nvcommdir}}/mpi/include
+      - CPATH {{nvcommdir}}/nccl/include
+      - CPATH {{nvcommdir}}/nvshmem/include
+      - CPATH {{nvcompdir}}/extras/qd/include/qd
+      - MANPATH {{nvcompdir}}/man
+    setenv: 
+      - NVHPC      {{nvhome}}
+      - NVHPC_ROOT {{root}}
+      - CC         {{nvcompdir}}/bin/nvc
+      - CXX        {{nvcompdir}}/bin/nvc++
+      - FC         {{nvcompdir}}/bin/nvfortran
+      - F90        {{nvcompdir}}/bin/nvfortran
+      - F77        {{nvcompdir}}/bin/nvfortran
+      - CPP cpp
+      - OPAL_PREFIX {{nvcommdir}}/mpi
+    requires:
+      - rcic-module-support
+    provides:
+      - "{{name}}/{{version}}"
+      - "{{name}}_{{version}}"

@@ -1,0 +1,6 @@
+---
+versions: versions-cudasdk.yaml
+build:
+  - cudasdk-module
+manifest:
+  - "{{build}}"
