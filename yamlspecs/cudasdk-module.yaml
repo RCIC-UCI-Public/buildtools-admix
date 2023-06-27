@@ -53,6 +53,7 @@
       - CPP cpp
       - OPAL_PREFIX {{nvcommdir}}/mpi
     requires:
+      - libatomic
       - rcic-module-support
     provides:
       - "{{name}}/{{version}}"
