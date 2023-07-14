@@ -6,6 +6,8 @@ bootstrap:
   - tcl-module
 build:
   - java17-module
+  - icu
+  - icu-module
   - "{{common}}"
   - lz4
   - lz4-module
