@@ -5,6 +5,7 @@
 ---
 - package: nodejs 
   name: nodejs 
+  release: 2
   conflicts: "npm nodejs nodejs-full-i18n"
   versions: !include versions.yaml
   version: "{{versions.nodejs}}"
@@ -22,6 +23,7 @@
     makeinstall: >
        mkdir -p $(ROOT)/{{root}};
        xzcat {{src_tarball}} | (cd $(ROOT)/{{root}}; tar xvf - --strip-components=1);
+       (cd $(ROOT)/{{root}}; bin/npm install --prefix . auto-changelog  -g);
        mv  $(ROOT)/{{root}}/CHANGELOG.md $(ROOT)/{{root}}/share/doc/node;
        mv  $(ROOT)/{{root}}/README.md $(ROOT)/{{root}}/share/doc/node;
        mv  $(ROOT)/{{root}}/LICENSE $(ROOT)/{{root}}/share/doc/node
