@@ -2,10 +2,11 @@
 # during install with /usr/lib/node_modules/npm/man file that is installed by npm RPM.
 # Manually remove npm, nodejs and nodejs-full-i18n RPMs before installing newer nodejs.
 !include rcic-package.yaml
+!include rpm.yaml
 ---
 - package: nodejs 
   name: nodejs 
-  release: 2
+  release: 3
   conflicts: "npm nodejs nodejs-full-i18n"
   versions: !include versions.yaml
   version: "{{versions.nodejs}}"
@@ -34,5 +35,3 @@
      - "{{root}}/share/doc/*"
      - "{{root}}/share/man/man1/*"
      - "{{root}}/share/systemtap/tapset/*"
-  rpm:
-     extras: "%define __brp_mangle_shebangs /bin/echo turn off shebang mangling"
