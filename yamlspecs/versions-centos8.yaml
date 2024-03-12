@@ -9,11 +9,7 @@ inteltbb:
   sep: "-"
   postfix: ""
   intel64: "4.8"
-icu: 
-  version: "70.1"
-  tarversion: "70-1"
 parallel: "20211222"
-likwid: "5.2.1"
 singularity: "3.9.4"
 lz4: "1.9.3"  
 oneAPI:

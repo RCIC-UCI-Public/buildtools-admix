@@ -18,10 +18,6 @@ bootstrap:
 common:
   - intel-tbb
   - intel-tbb-module
-  - parallel
-  - parallel-module
-  - likwid
-  - likwid-module
   - singularity
   - singularity-module
 build:

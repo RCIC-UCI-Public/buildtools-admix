@@ -18,8 +18,6 @@ inteltbb:
 icu: 
   version: "65.1"
   tarversion: "65-1"
-parallel: "20200222"
-likwid: "5.0.1"
 nodejs: "17.3.0"
 nodejs_rel: "4"
 protobuf: "2.4.1"
