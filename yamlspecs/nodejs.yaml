@@ -6,10 +6,10 @@
 ---
 - package: nodejs 
   name: nodejs 
-  release: 3
   conflicts: "npm nodejs nodejs-full-i18n"
   versions: !include versions.yaml
   version: "{{versions.nodejs}}"
+  release: "{{versions.nodejs_rel}}"
   extension: tar.xz 
   tardir: "node-v{{version}}-linux-x64"
   vendor_source: https://nodejs.org/dist/v{{version}}/{{tardir}}.{{extension}}
@@ -32,6 +32,4 @@
      - "{{root}}/bin/*"
      - "{{root}}/include/*"
      - "{{root}}/lib/*"
-     - "{{root}}/share/doc/*"
-     - "{{root}}/share/man/man1/*"
-     - "{{root}}/share/systemtap/tapset/*"
+     - "{{root}}/share/*"
