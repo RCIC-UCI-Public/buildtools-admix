@@ -7,8 +7,6 @@ bootstrap:
 build:
   - java17-module
   - "{{common}}"
-  - lz4
-  - lz4-module
   - tk
   - tk-module
   - parallel
