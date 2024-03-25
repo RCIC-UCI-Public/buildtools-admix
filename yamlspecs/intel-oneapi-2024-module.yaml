@@ -1,0 +1,74 @@
+!include intel-oneapi-module.yaml
+---
+- versions: !include versions.yaml
+  version: "{{versions.oneAPI.version}}"
+  toolversion: "{{versions.oneAPI.toolversion}}"
+  hpcversion: "{{versions.oneAPI.hpcversion}}"
+  #root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{version}}"
+  root: "{{versions.oneAPI.nfspath}}/{{version}}"
+  toolpath: "{{root}}/compiler/{{toolversion}}"
+  oclfpgspath: "{{root}}/compiler/{{toolversion}}/opt/oclfpga"
+  tbbpath: "{{root}}/tbb/{{hpcversion}}"
+  mklpath: "{{root}}/mkl/{{toolversion}}"
+  module:
+    setenv: 
+      - ONEAPI_ROOT {{root}}
+      - CMPLR_ROOT {{toolpath}}
+      - TBBROOT {{tbbpath}}
+      - MKLROOT {{mklpath}}
+      - INTELFPGAOCLSDKROOT {{oclfpgspath}}
+      - CC  {{toolpath}}/bin/icx
+      - CXX {{toolpath}}/bin/icx
+      - FC  {{toolpath}}/bin/ifort
+      - F77 {{toolpath}}/bin/ifort
+      - F90 {{toolpath}}/bin/ifort
+    prepend_path:
+      - CMAKE_PREFIX_PATH {{toolpath}}
+      - CMAKE_PREFIX_PATH {{mklpath}}/lib/cmake
+      - CMAKE_PREFIX_PATH {{tbbpath}}
+      - CPATH {{oclfpgspath}}/include
+      - CPATH {{mklpath}}/include
+      - CPATH {{tbbpath}}/include
+      - DIAGUTIL_PATH {{toolpath}}/etc/compiler/sys_check/sys_check.sh
+      - -d " " LDFLAGS -L{{toolpath}}/lib -Wl,-rpath,{{toolpath}}/lib
+      - -d " " LDFLAGS -L{{mklpath}}/lib -Wl,-rpath,{{mklpath}}/lib
+      - -d " " LDFLAGS -L{{tbbpath}}/lib -Wl,-rpath,{{tbbpath}}/lib
+      - LIBRARY_PATH {{toolpath}}/lib
+      - LIBRARY_PATH {{mklpath}}/lib
+      - LIBRARY_PATH {{tbbpath}}/lib
+      - LD_LIBRARY_PATH {{toolpath}}/lib
+      - LD_LIBRARY_PATH {{toolpath}}/opt/compiler/lib
+      - LD_LIBRARY_PATH {{oclfpgspath}}/host/linux64/lib
+      - LD_LIBRARY_PATH {{mklpath}}/lib
+      - LD_LIBRARY_PATH {{tbbpath}}/lib
+      - LD_RUN_PATH {{toolpath}}/lib
+      - LD_RUN_PATH {{toolpath}}/opt/compiler/lib
+      - LD_RUN_PATH {{mklpath}}/lib
+      - LD_RUN_PATH {{tbbpath}}/lib
+      - MANPATH {{toolpath}}/share/man
+      - NLSPATH {{toolpath}}/lib/compiler/locale/%l_%t/%N
+      - NLSPATH {{mklpath}}/share/locale/%l_%t/%N
+      - OCL_ICD_FILENAMES {{toolpath}}/lib/libintelocl.so
+      - OCL_ICD_FILENAMES libalteracl.so
+      - OCL_ICD_FILENAMES libintelocl_emu.so
+      - PATH {{toolpath}}/bin
+      - PATH {{oclfpgspath}}/bin
+      - PATH {{mklpath}}/bin
+      - PKG_CONFIG_PATH {{toolpath}}/lib/pkgconfig
+      - PKG_CONFIG_PATH {{mklpath}}/lib/pkgconfig
+      - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
+  provides:
+    - "{{name}}/{{version}}"
+    - "{{name}}_{{version}}"
+    - libarcher.so 
+    - libicaf.so 
+    - libomp5.so 
+    - libistrconv.so
+    - libomptarget.so 
+    - libirc.so 
+    - libsvml.so()(64bit)
+    - libirng.so()(64bit)
+    - libimf.so()(64bit)
+    - libifcoremt.so.5()(64bit)
+    - libifport.so.5()(64bit)
+    - libintlc.so.5()(64bit)

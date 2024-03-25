@@ -1,0 +1,16 @@
+!include packages.yaml
+---
+versions: versions-2024.yaml
+system:
+  - openmpi
+  - libX11-devel
+  - autoconf
+  - lua-devel
+  - openssl-devel
+  - libuuid-devel
+  - perl-Text-Balanced
+  - libseccomp-devel 
+  - crun
+bootstrap:
+build:
+  - intel-oneapi-2024-module

@@ -1,0 +1,7 @@
+!include versions.yaml
+---
+oneAPI:
+  nfspath: "/tmp/oneAPI"
+  version: "2024.0.1"
+  toolversion: "2024.0"
+  hpcversion: "2021.11"
