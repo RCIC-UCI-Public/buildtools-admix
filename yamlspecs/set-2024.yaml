@@ -12,5 +12,7 @@ system:
   - libseccomp-devel 
   - crun
 bootstrap:
+  - go
+  - go-module
 build:
   - intel-oneapi-2024-module

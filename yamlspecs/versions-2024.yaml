@@ -1,5 +1,6 @@
 !include versions.yaml
 ---
+go: "1.22.3"
 oneAPI:
   nfspath: "/data/opt/apps"
   version: "2024.0.1"
