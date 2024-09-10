@@ -1,0 +1,13 @@
+# only list removed versions
+
+# versions.yaml:
+#parallel: "20200222"
+#likwid: "5.0.1"
+
+# versions-centos8.yaml:
+#icu: 
+#  version: "70.1"
+#  tarversion: "70-1"
+#likwid: "5.2.1"
+
+
