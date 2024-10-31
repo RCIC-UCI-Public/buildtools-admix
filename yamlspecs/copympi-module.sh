@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copy the contents of the current MPI module and make it YAML formatted
 OS_RELEASE=$(/bin/cat /etc/os-release | grep ^REDHAT_SUPPORT_PRODUCT_VERSION | /usr/bin/cut -f 2 -d\" | /usr/bin/cut -f 1 -d.)
-if [ "$OS_RELEASE" == "8" ]; then MODPATH="/usr/share/"; else MODPATH="/etc"; fi
+if [ "$OS_RELEASE" == "7" ]; then MODPATH="/etc"; else MODPATH="/usr/share"; fi
 OMPI_MODULE=${MODPATH}/modulefiles/mpi/openmpi-x86_64
 SKEL_MODULE=openmpi-module.yaml.in
 VER=$(rpm -qi $(rpm -qf $OMPI_MODULE) | awk -F : '/^Version/{print $NF}')
