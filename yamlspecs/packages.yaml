@@ -2,6 +2,7 @@
 site: !include site.yaml
 system:
   - openmpi
+  - openmpi-devel
   - libX11-devel
   - autoconf
   - lua-devel
