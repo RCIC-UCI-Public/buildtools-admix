@@ -28,10 +28,10 @@ build:
   - openmpi-module
   - "{{common}}"
   - nodejs
-  - !ifeq "{{site.os_release}},8,,protobuf-classic"
-  - !ifeq "{{site.os_release}},8,,protobuf-classic-module"
-  - !ifeq "{{site.os_release}},8,,setuptools"
-  - !ifeq "{{site.os_release}},8,,java7-module"
+  - !ifeq "{{site.os_release}},7,protobuf-classic,"
+  - !ifeq "{{site.os_release}},7,protobuf-classic-module,"
+  - !ifeq "{{site.os_release}},7,setuptools,"
+  - !ifeq "{{site.os_release}},7,java7-module,"
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
