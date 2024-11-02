@@ -26,3 +26,4 @@ f459315e4f7e4f720aa665c3f5699f38e3ab3c0f  sources/go1.20.2.linux-amd64.tar.gz 1n
 0bfca9ec56261b90e35f7c9b9866652f838e696c  sources/go1.20.4.linux-amd64.tar.gz
 eac5030e85c878d40d59a485ac2aacf3e292384e  sources/go1.22.3.linux-amd64.tar.gz
 bf9f2266cbc725fa6316b3cf67f1cf8cfb296913  sources/singularity-3.11.3.tar.gz
+c0b39634f3611f77c81aabfc4e34b78f912a06c8  sources/node-v21.4.0-linux-x64.tar.xz
