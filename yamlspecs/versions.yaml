@@ -25,5 +25,5 @@ intel_compiler:
   shortversion: "2020u1"
   longversion: "2020.1.217"
   arch: "intel64"
-singularity: "3.4.1"
 go: "1.17.7"
+bindfs: "1.17.7"

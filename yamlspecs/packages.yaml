@@ -10,6 +10,8 @@ system:
   - libuuid-devel
   - perl-Text-Balanced
   - glib2-devel
+  - fuse
+  - fuse-devel
 bootstrap:
   - gcc-module
   - tcl
@@ -19,8 +21,6 @@ bootstrap:
 common:
   - intel-tbb
   - intel-tbb-module
-  - singularity
-  - singularity-module
 build:
   - java8-module
   - java11-module
@@ -31,6 +31,7 @@ build:
   - !ifeq "{{site.os_release}},7,protobuf-classic-module,"
   - !ifeq "{{site.os_release}},7,setuptools,"
   - !ifeq "{{site.os_release}},7,java7-module,"
+  - bindfs
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
