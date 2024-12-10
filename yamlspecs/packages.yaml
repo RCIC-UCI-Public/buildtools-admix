@@ -33,6 +33,7 @@ build:
   - !ifeq "{{site.os_release}},7,protobuf-classic-module,"
   - !ifeq "{{site.os_release}},7,setuptools,"
   - !ifeq "{{site.os_release}},7,java7-module,"
+  - bindfs
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
