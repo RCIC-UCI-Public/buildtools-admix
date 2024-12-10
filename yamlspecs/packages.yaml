@@ -5,6 +5,8 @@ system:
   - openmpi-devel
   - libX11-devel
   - autoconf
+  - automake
+  - libtool
   - lua-devel
   - openssl-devel
   - libuuid-devel
