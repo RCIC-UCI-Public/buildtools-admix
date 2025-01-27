@@ -1,0 +1,20 @@
+!include common.yaml
+---
+- package: cmake 
+  name: cmake
+  version: "{{versions.cmake}}"
+  vendor_source: https://cmake.org/files/{{versions.cmake_major}}/{{name}}-{{version}}.{{extension}}
+  description: |
+    Cmake version {{version}}. CMake is an open-source, cross-platform family of tools designed to build, 
+    test and package software. CMake is used to control the software compilation process using simple 
+    platform and compiler independent configuration files, and generate native makefiles and workspaces 
+    that can be used in the compiler environment of your choice. The suite of CMake tools were created 
+    by Kitware in response to the need for a powerful, cross-platform build environment for open-source 
+    projects such as ITK and VTK.
+  build:
+    configure: ./bootstrap --prefix={{root}}
+
+# add --sphinx-man  to configure to build man pages with sphinx.
+# requires newer sphinx > 2.
+# OS supplied python is 3.6, has no dataclasses and old sphinx < 2
+# currently not building cmake man pages

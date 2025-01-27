@@ -14,6 +14,14 @@ system:
   - glib2-devel
   - fuse
   - fuse-devel
+  - gcc
+  - gcc-c++
+  - gcc-gfortran
+  - pcre-devel
+  - zlib-devel
+  - openssl-devel
+  - !ifeq "{{site.os_release}},8,libssh-devel,libssh2-devel"
+  - libcurl-devel
 bootstrap:
   - gcc-module
   - tcl

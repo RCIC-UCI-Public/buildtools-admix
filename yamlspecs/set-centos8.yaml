@@ -14,3 +14,5 @@ build:
   - intel-oneapi-module
   - singularity
   - singularity-module
+  - cmake
+  - cmake-module

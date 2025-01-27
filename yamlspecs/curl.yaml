@@ -1,0 +1,12 @@
+!include common.yaml
+---
+- package: curl 
+  name: curl
+  version: "{{versions.curl}}"
+  vendor_source: https://curl.haxx.se/download/{{name}}-{{version}}.{{extension}}
+  description: |
+    Command line tool and library version {{version}} for transferring data with URLs
+
+  build:
+    config_ssh: !ifeq "{{versions.os_release}},8,--with-libssh,--with-libssh2"
+    configure_args:  --with-ssl --enable-http {{build.config_ssh}} 

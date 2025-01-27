@@ -16,3 +16,9 @@ bootstrap:
   - go-module
 build:
   - intel-oneapi-2024-module
+  - cmake
+  - cmake-module
+  - curl
+  - curl-module
+  - ninja
+  - ninja-module

@@ -1,0 +1,10 @@
+!include ninja.yaml
+!include rcic-module.yaml
+---
+- package: ninja module
+  category: TOOLS
+  module:
+    prepend_path:
+      - PATH {{root}}/bin
+    setenv: 
+      - NINJA_HOME {{root}}

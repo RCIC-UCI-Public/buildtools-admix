@@ -1,0 +1,10 @@
+!include cmake.yaml
+!include rcic-module.yaml
+---
+- package: cmake module
+  category: TOOLS
+  module:
+    prepend_path:
+      - PATH {{root}}/bin
+    setenv:
+      - CMAKE_HOME {{root}}
