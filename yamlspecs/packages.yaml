@@ -49,5 +49,4 @@ sets:
   - singularity
   - centos8
   - "2023"
-  - cudasdk
   - "2024"

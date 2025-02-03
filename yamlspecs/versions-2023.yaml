@@ -4,3 +4,5 @@ singularity: "3.11.3"
 go: "1.20.4"
 nodejs: "21.4.0"
 nodejs_rel: "2"
+nfspath: /data/opt/apps
+cudasdk: "22.9"

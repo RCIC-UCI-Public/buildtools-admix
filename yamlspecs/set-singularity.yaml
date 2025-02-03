@@ -1,5 +1,7 @@
+!include packages.yaml
 ---
 versions: versions-singularity.yaml
+bootstrap:
 build:
   - singularity
   - singularity-module
