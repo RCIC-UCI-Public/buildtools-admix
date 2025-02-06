@@ -1,5 +1,6 @@
 !include site.yaml
 ---
+admix: buildtools-admix
 compiler:
   name: "{{versions.compiler_sys.name}}"
   version: "{{versions.compiler_sys.version}}"
