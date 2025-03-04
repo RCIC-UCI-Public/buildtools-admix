@@ -20,7 +20,7 @@ system:
   - pcre-devel
   - zlib-devel
   - openssl-devel
-  - !ifeq "{{site.os_release}},8,libssh-devel,libssh2-devel"
+  - !ifeq "{{site.os_release}},7,libssh2-devel,libssh-devel"
   - libcurl-devel
 bootstrap:
   - gcc-module
