@@ -6,7 +6,6 @@ bootstrap:
   - tcl-module
 build:
   - java17-module
-  - "{{common}}"
   - tk
   - tk-module
   - parallel
