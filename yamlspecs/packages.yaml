@@ -20,7 +20,7 @@ system:
   - pcre-devel
   - zlib-devel
   - openssl-devel
-  - !ifeq "{{site.os_release}},7,libssh2-devel,libssh-devel"
+  - libssh-devel
   - libcurl-devel
   - !ifeq "{{site.os_release}},9,hwloc-devel,"
   - glibc-static
@@ -41,10 +41,6 @@ build:
   - intel-compiler-module
   - openmpi-module
   - "{{common}}"
-  - !ifeq "{{site.os_release}},7,protobuf-classic,"
-  - !ifeq "{{site.os_release}},7,protobuf-classic-module,"
-  - !ifeq "{{site.os_release}},7,setuptools,"
-  - !ifeq "{{site.os_release}},7,java7-module,"
   - bindfs
 manifest:
   - "{{bootstrap}}"
