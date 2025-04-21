@@ -23,6 +23,9 @@ system:
   - !ifeq "{{site.os_release}},7,libssh2-devel,libssh-devel"
   - libcurl-devel
   - !ifeq "{{site.os_release}},9,hwloc-devel,"
+  - glibc-static
+  - libstdc++-static
+
 bootstrap:
   - gcc-module
   - tcl

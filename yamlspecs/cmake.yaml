@@ -12,8 +12,8 @@
     by Kitware in response to the need for a powerful, cross-platform build environment for open-source 
     projects such as ITK and VTK.
   build:
-    configure: ./bootstrap --prefix={{root}}
-
+    configure: export CXXFLAGS='-Wl,-rpath=/lib64'; ./bootstrap --prefix={{root}}
+    pkgmake: make -j 8
 # add --sphinx-man  to configure to build man pages with sphinx.
 # requires newer sphinx > 2.
 # OS supplied python is 3.6, has no dataclasses and old sphinx < 2

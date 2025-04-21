@@ -9,7 +9,7 @@
     URL https\://ninja-build.org. See the manual https\://ninja-build.org/manual.html
     or doc/manual.asciidoc included in the distribution
   build:
-    configure: ./configure.py
+    configure: export CXXFLAGS='-Wl,-rpath=/lib64'; ./configure.py
     configure_args: --bootstrap
     pkgmake: echo built in configure stage 
   install:
