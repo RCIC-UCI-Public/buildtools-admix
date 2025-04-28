@@ -15,6 +15,6 @@ oneAPI:
   nfspath: "/data/opt/apps"
   version: "2022.2"
   toolversion: "2022.1.0"
-  hpcversion: "2021.6.0"
+  tbbversion: "2021.6.0"
 cmake: "3.20.5"
 cmake_major: "v3.20"

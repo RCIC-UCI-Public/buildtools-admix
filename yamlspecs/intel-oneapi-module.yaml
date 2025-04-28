@@ -7,7 +7,7 @@
   versions: !include versions.yaml
   version: "{{versions.oneAPI.version}}"
   toolversion: "{{versions.oneAPI.toolversion}}"
-  hpcversion: "{{versions.oneAPI.hpcversion}}"
+  tbbversion: "{{versions.oneAPI.tbbversion}}"
   vendor_source: https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html
   description: |
       Intel (R) oneAPI Base and oneAPI HPC Toolkits version {{versions.oneAPI.version}}
@@ -19,7 +19,7 @@
   root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{version}}"
   toolpath: "{{root}}/compiler/{{toolversion}}"
   toolpath_full: "{{root}}/compiler/{{toolversion}}/linux"
-  tbbpath: "{{root}}/tbb/{{hpcversion}}"
+  tbbpath: "{{root}}/tbb/{{tbbversion}}"
   mklpath: "{{root}}/mkl/{{toolversion}}"
   module:
     setenv: 

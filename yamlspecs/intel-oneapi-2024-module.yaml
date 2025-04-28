@@ -3,11 +3,11 @@
 - versions: !include versions.yaml
   version: "{{versions.oneAPI.version}}"
   toolversion: "{{versions.oneAPI.toolversion}}"
-  hpcversion: "{{versions.oneAPI.hpcversion}}"
+  tbbversion: "{{versions.oneAPI.tbbversion}}"
   root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{version}}"
   toolpath: "{{root}}/compiler/{{toolversion}}"
   oclfpgspath: "{{root}}/compiler/{{toolversion}}/opt/oclfpga"
-  tbbpath: "{{root}}/tbb/{{hpcversion}}"
+  tbbpath: "{{root}}/tbb/{{tbbversion}}"
   mklpath: "{{root}}/mkl/{{toolversion}}"
   module:
     setenv: 

@@ -10,10 +10,10 @@
 
   oneapiversion: "{{versions.oneAPI.version}}"
   toolversion: "{{versions.oneAPI.toolversion}}"
-  hpcversion: "{{versions.oneAPI.hpcversion}}"
-  version: "{{hpcversion}}"
+  tbbversion: "{{versions.oneAPI.tbbversion}}"
+  version: "{{tbbversion}}"
   root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{oneapiversion}}"
-  tbbpath: "{{root}}/tbb/{{hpcversion}}"
+  tbbpath: "{{root}}/tbb/{{tbbversion}}"
   name: intel-tbb
   module:
     setenv: 
