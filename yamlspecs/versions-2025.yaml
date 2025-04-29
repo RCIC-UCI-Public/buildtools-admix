@@ -1,0 +1,8 @@
+!include versions.yaml
+---
+oneAPI:
+  nfspath: "/data/opt/apps"
+  version: "2025.1.0"
+  toolversion: "2025.1"
+  tbbversion: "2022.1"
+  umfversion: "0.10"

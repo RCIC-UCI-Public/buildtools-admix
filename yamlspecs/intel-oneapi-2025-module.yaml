@@ -1,0 +1,70 @@
+!include intel-oneapi-module.yaml
+---
+- versions: !include versions.yaml
+  version: "{{versions.oneAPI.version}}"
+  root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{version}}"
+  toolpath: "{{root}}/compiler/{{versions.oneAPI.toolversion}}"
+  umfpath: "{{root}}/umf/{{versions.oneAPI.umfversion}}"
+  tbbpath: "{{root}}/tbb/{{versions.oneAPI.tbbversion}}"
+  mklpath: "{{root}}/mkl/{{versions.oneAPI.toolversion}}"
+  module:
+    setenv: 
+      - ONEAPI_ROOT {{root}}
+      - CMPLR_ROOT {{toolpath}}
+      - TBBROOT {{tbbpath}}
+      - MKLROOT {{mklpath}}
+      - UMF_ROOT {{umfpath}}
+      - CC  {{toolpath}}/bin/icx
+      - CXX {{toolpath}}/bin/icx
+      - FC  {{toolpath}}/bin/ifort
+      - F77 {{toolpath}}/bin/ifort
+      - F90 {{toolpath}}/bin/ifort
+    prepend_path:
+      - CMAKE_PREFIX_PATH {{tbbpath}}
+      - CMAKE_PREFIX_PATH {{umfpath}}
+      - CMAKE_PREFIX_PATH {{toolpath}}
+      - CMAKE_PREFIX_PATH {{mklpath}}/lib/cmake
+      - CPATH {{tbbpath}}/include
+      - CPATH {{mklpath}}/include
+      - CPATH {{umfpath}}/include
+      - DIAGUTIL_PATH {{toolpath}}/etc/compiler/sys_check/sys_check.sh
+      - -d " " LDFLAGS -L{{tbbpath}}/lib -Wl,-rpath,{{tbbpath}}/lib
+      - -d " " LDFLAGS -L{{toolpath}}/lib -Wl,-rpath,{{toolpath}}/lib
+      - -d " " LDFLAGS -L{{mklpath}}/lib -Wl,-rpath,{{mklpath}}/lib
+      - LIBRARY_PATH {{tbbpath}}/lib
+      - LIBRARY_PATH {{umfpath}}/lib
+      - LIBRARY_PATH {{toolpath}}/lib
+      - LIBRARY_PATH {{mklpath}}/lib
+      - LD_LIBRARY_PATH {{tbbpath}}/lib
+      - LD_LIBRARY_PATH {{toolpath}}/lib
+      - LD_LIBRARY_PATH {{toolpath}}/opt/compiler/lib
+      - LD_LIBRARY_PATH {{umfpath}}/lib
+      - LD_LIBRARY_PATH {{mklpath}}/lib
+      - LD_RUN_PATH {{tbbpath}}/lib
+      - LD_RUN_PATH {{umfpath}}/lib
+      - LD_RUN_PATH {{toolpath}}/lib
+      - LD_RUN_PATH {{toolpath}}/opt/compiler/lib
+      - LD_RUN_PATH {{mklpath}}/lib
+      - MANPATH {{toolpath}}/share/man
+      - NLSPATH {{toolpath}}/lib/compiler/locale/%l_%t/%N
+      - OCL_ICD_FILENAMES {{toolpath}}/lib/libintelocl.so
+      - PATH {{toolpath}}/bin
+      - PATH {{mklpath}}/bin
+      - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
+      - PKG_CONFIG_PATH {{toolpath}}/lib/pkgconfig
+      - PKG_CONFIG_PATH {{mklpath}}/lib/pkgconfig
+  provides:
+    - "{{name}}/{{version}}"
+    - "{{name}}_{{version}}"
+    - libarcher.so 
+    - libicaf.so 
+    - libomp5.so 
+    - libistrconv.so
+    - libomptarget.so 
+    - libirc.so 
+    - libsvml.so()(64bit)
+    - libirng.so()(64bit)
+    - libimf.so()(64bit)
+    - libifcoremt.so.5()(64bit)
+    - libifport.so.5()(64bit)
+    - libintlc.so.5()(64bit)

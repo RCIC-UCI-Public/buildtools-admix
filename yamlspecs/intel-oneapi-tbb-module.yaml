@@ -1,13 +1,14 @@
-!include intel-oneapi-module.yaml
+!include rcic-package.yaml
+!include rcic-module.yaml
 ---
-- versions: !include versions.yaml
+- package: intel-oneapi compiler module 
+  category: COMPILERS
+  vendor_source:
+  versions: !include versions.yaml
   description: |
     Intel Threading Building Blocks {{version}}. Threading Building Blocks (TBB) lets you easily
     write parallel C++ programs that take full advantage of multicore performance, that are portable,
-    composable and have future-proof scalability. This version of TBB is from
-    OneAPI version {{oneapiversion}}
-    Environment Vars: INTEL_TBBHOME = {{tbbpath}}
-
+    composable and have future-proof scalability. This version of TBB is from OneAPI version {{oneapiversion}}.
   oneapiversion: "{{versions.oneAPI.version}}"
   toolversion: "{{versions.oneAPI.toolversion}}"
   tbbversion: "{{versions.oneAPI.tbbversion}}"
@@ -27,6 +28,8 @@
       - LD_LIBRARY_PATH {{tbbpath}}/lib
       - LD_RUN_PATH {{tbbpath}}/lib
       - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
+    requires:
+      - rcic-module-support
   provides:
     - "{{name}}/{{version}}"
     - "{{name}}_{{version}}"
