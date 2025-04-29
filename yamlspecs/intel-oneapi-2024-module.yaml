@@ -22,40 +22,40 @@
       - F77 {{toolpath}}/bin/ifort
       - F90 {{toolpath}}/bin/ifort
     prepend_path:
+      - CMAKE_PREFIX_PATH {{tbbpath}}
       - CMAKE_PREFIX_PATH {{toolpath}}
       - CMAKE_PREFIX_PATH {{mklpath}}/lib/cmake
-      - CMAKE_PREFIX_PATH {{tbbpath}}
-      - CPATH {{oclfpgspath}}/include
-      - CPATH {{mklpath}}/include
       - CPATH {{tbbpath}}/include
+      - CPATH {{mklpath}}/include
+      - CPATH {{oclfpgspath}}/include
       - DIAGUTIL_PATH {{toolpath}}/etc/compiler/sys_check/sys_check.sh
+      - -d " " LDFLAGS -L{{tbbpath}}/lib -Wl,-rpath,{{tbbpath}}/lib
       - -d " " LDFLAGS -L{{toolpath}}/lib -Wl,-rpath,{{toolpath}}/lib
       - -d " " LDFLAGS -L{{mklpath}}/lib -Wl,-rpath,{{mklpath}}/lib
-      - -d " " LDFLAGS -L{{tbbpath}}/lib -Wl,-rpath,{{tbbpath}}/lib
+      - LIBRARY_PATH {{tbbpath}}/lib
       - LIBRARY_PATH {{toolpath}}/lib
       - LIBRARY_PATH {{mklpath}}/lib
-      - LIBRARY_PATH {{tbbpath}}/lib
+      - LD_LIBRARY_PATH {{tbbpath}}/lib
       - LD_LIBRARY_PATH {{toolpath}}/lib
       - LD_LIBRARY_PATH {{toolpath}}/opt/compiler/lib
       - LD_LIBRARY_PATH {{oclfpgspath}}/host/linux64/lib
       - LD_LIBRARY_PATH {{mklpath}}/lib
-      - LD_LIBRARY_PATH {{tbbpath}}/lib
+      - LD_RUN_PATH {{tbbpath}}/lib
       - LD_RUN_PATH {{toolpath}}/lib
       - LD_RUN_PATH {{toolpath}}/opt/compiler/lib
       - LD_RUN_PATH {{mklpath}}/lib
-      - LD_RUN_PATH {{tbbpath}}/lib
       - MANPATH {{toolpath}}/share/man
       - NLSPATH {{toolpath}}/lib/compiler/locale/%l_%t/%N
       - NLSPATH {{mklpath}}/share/locale/%l_%t/%N
       - OCL_ICD_FILENAMES {{toolpath}}/lib/libintelocl.so
       - OCL_ICD_FILENAMES libalteracl.so
       - OCL_ICD_FILENAMES libintelocl_emu.so
-      - PATH {{toolpath}}/bin
       - PATH {{oclfpgspath}}/bin
+      - PATH {{toolpath}}/bin
       - PATH {{mklpath}}/bin
+      - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
       - PKG_CONFIG_PATH {{toolpath}}/lib/pkgconfig
       - PKG_CONFIG_PATH {{mklpath}}/lib/pkgconfig
-      - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
   provides:
     - "{{name}}/{{version}}"
     - "{{name}}_{{version}}"
