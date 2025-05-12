@@ -14,6 +14,10 @@
   build:
     configure: export CXXFLAGS='-Wl,-rpath=/lib64'; ./bootstrap --prefix={{root}}
     pkgmake: make -j 8
+  install:
+    makeinstall: >
+      $(MAKE) DESTDIR=$(ROOT) install;
+      (cd $(ROOT)/{{root}}/bin; ln -s cmake cmake3)
 # add --sphinx-man  to configure to build man pages with sphinx.
 # requires newer sphinx > 2.
 # OS supplied python is 3.6, has no dataclasses and old sphinx < 2
