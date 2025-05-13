@@ -25,27 +25,15 @@ system:
   - !ifeq "{{site.os_release}},9,hwloc-devel,"
   - glibc-static
   - libstdc++-static
-
+  - "{{systemadd}}"
+systemadd:
 bootstrap:
-  - gcc-module
-  - tcl
-  - tcl-module
-  - go
-  - go-module
-common:
-  - intel-tbb
-  - intel-tbb-module
 build:
-  - java8-module
-  - java11-module
-  - intel-compiler-module
-  - openmpi-module
-  - "{{common}}"
-  - bindfs
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
 sets:
+  - base
   - singularity
   - centos8
   - "2023"

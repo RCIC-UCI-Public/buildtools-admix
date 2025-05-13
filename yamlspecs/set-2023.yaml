@@ -1,14 +1,7 @@
 !include packages.yaml
 ---
 versions: versions-2023.yaml
-system:
-  - openmpi
-  - libX11-devel
-  - autoconf
-  - lua-devel
-  - openssl-devel
-  - libuuid-devel
-  - perl-Text-Balanced
+systemadd:
   - libseccomp-devel 
   - crun
 bootstrap:

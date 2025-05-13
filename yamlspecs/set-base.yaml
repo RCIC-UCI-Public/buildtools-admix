@@ -1,0 +1,17 @@
+!include packages.yaml
+---
+versions: versions.yaml
+bootstrap:
+  - gcc-module
+  - tcl
+  - tcl-module
+  - go
+  - go-module
+build:
+  - java8-module
+  - java11-module
+  - intel-compiler-module
+  - openmpi-module
+  - intel-tbb
+  - intel-tbb-module
+  - bindfs
