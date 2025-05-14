@@ -3,7 +3,7 @@
 # This includes the Generic yaml2rpm Makefile - most packaging should
 # be able to use this.
 
-ALL_TARGETS = openmpi-module.yaml bootstrap $(SOURCES) $(PKGS) 
+ALL_TARGETS = bootstrap openmpi-module.yaml $(SOURCES) $(PKGS) 
 include $(YAML2RPM_HOME)/sys/Makefile
 
 openmpi-module.yaml: copympi-module.sh openmpi-module.yaml.in
