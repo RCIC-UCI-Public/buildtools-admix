@@ -28,6 +28,8 @@ system:
   - "{{systemadd}}"
 systemadd:
 bootstrap:
+  - go
+  - go-module
 build:
 manifest:
   - "{{bootstrap}}"

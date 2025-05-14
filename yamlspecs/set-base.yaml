@@ -5,8 +5,6 @@ bootstrap:
   - gcc-module
   - tcl
   - tcl-module
-  - go
-  - go-module
 build:
   - java8-module
   - java11-module
