@@ -3,16 +3,13 @@
 # This includes the Generic yaml2rpm Makefile - most packaging should
 # be able to use this.
 
-ALL_TARGETS = bootstrap default 
+ALL_TARGETS = openmpi-module.yaml bootstrap $(SOURCES) $(PKGS) 
 include $(YAML2RPM_HOME)/sys/Makefile
 
 openmpi-module.yaml: copympi-module.sh openmpi-module.yaml.in
 	sh copympi-module.sh > $@	
 
 manifest :: openmpi-module.yaml
-
-default: openmpi-module.yaml
-	make -f $(THISMAKE) $(PKGS)
 
 clean: openmpi-module.yaml
 	/bin/rm -f openmpi-module.yaml

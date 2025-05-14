@@ -32,6 +32,8 @@ build:
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
+
+parallel: 3
 sets:
   - base
   - singularity
