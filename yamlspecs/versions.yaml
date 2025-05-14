@@ -28,3 +28,4 @@ intel_compiler:
   arch: "intel64"
 go: "1.17.7"
 bindfs: "1.17.7"
+singularity: "3.7.2"
