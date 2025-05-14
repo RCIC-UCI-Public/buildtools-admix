@@ -11,5 +11,5 @@ openmpi-module.yaml: copympi-module.sh openmpi-module.yaml.in
 
 manifest :: openmpi-module.yaml
 
-clean: openmpi-module.yaml
-	/bin/rm -f openmpi-module.yaml
+veryclean ::
+	- /bin/rm openmpi-module.yaml
