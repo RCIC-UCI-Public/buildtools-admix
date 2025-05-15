@@ -7,7 +7,6 @@ bootstrap:
 build:
   - java17-module
   - tk
-  - tk-module
   - parallel
   - parallel-module
   - intel-oneapi-module
