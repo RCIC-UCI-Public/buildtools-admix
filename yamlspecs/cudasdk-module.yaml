@@ -2,20 +2,22 @@
 !include rcic-package.yaml
 !include rcic-module.yaml
 ---
-- package: cudasdk module 
+- package: cudasdk module
   release: 2
   category: COMPILERS
-  name: cudasdk 
+  name: cudasdk
   versions: !include versions.yaml
   version: "{{versions.cudasdk}}"
   vendor_source: "https://developer.nvidia.com/nvidia-hpc-sdk-releases"
   description: |
-    The NVIDIA HPC Software Development Kit (SDK) {{version}} includes the 
-    nvfortran and pgfortran compilers, libraries and software tools
-    essential to the performance and portability of HPC applications. 
+    The NVIDIA HPC Software Development Kit (SDK) {{version}} includes
+    the nvfortran and pgfortran compilers, libraries and software tools
+    essential to the performance and portability of HPC applications.
     See release info https://developer.nvidia.com/nvidia-hpc-sdk-releases.
     See SDK docs https://developer.nvidia.com/hpc-sdk and using CUDA fortran
     guide https://docs.nvidia.com/hpc-sdk/compilers/cuda-fortran-prog-guide
+  shortdescription: |
+    The NVIDIA HPC Software Development Kit (SDK).
   nvhome: "{{versions.nfspath}}/nvhpc/{{version}}"
   root: "{{nvhome}}/Linux_x86_64/{{version}}"
   nvcudadir: "{{root}}/cuda"

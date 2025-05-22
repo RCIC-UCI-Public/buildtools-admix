@@ -1,19 +1,19 @@
 !include rcic-package.yaml
 ---
-- package: tcl 
+- package: tcl
   name: tcl
   versions: !include versions.yaml
   version: "{{versions.tcl}}"
   vendor_source: https://prdownloads.sourceforge.net/tcl/{{name}}{{version}}-src.{{extension}}
   src_dir: "{{name}}{{version}}"
   description: |
-    Tcl (Tool Command Language) is a very powerful but easy to learn dynamic programming language, 
-    suitable for a very wide range of uses, including web and desktop applications, networking, 
-    administration, testing and many more. Open source and business-friendly, Tcl is a mature yet 
-    evolving language that is truly cross platform, easily deployed and highly extensible
+    Tcl (Tool Command Language) is a very powerful dynamic programming language.
+    Suitable for a very wide range of uses, including web and desktop applications,
+    networking, administration, testing and many more. Tcl is a mature yet evolving
+    language that is truly cross platform, easily deployed and highly extensible.
   build:
-    configure: cd unix; ./configure --enable-shared --enable-64bit --enable-threads --prefix={{root}} 
-    modules: 
-    target: 
+    configure: cd unix; ./configure --enable-shared --enable-64bit --enable-threads --prefix={{root}}
+    modules:
+    target:
   install:
     makeinstall: cd unix; $(MAKE) DESTDIR=$(ROOT) install

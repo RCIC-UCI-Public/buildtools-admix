@@ -1,18 +1,18 @@
 !include common.yaml
 ---
-- package: ninja 
-  name: ninja 
+- package: ninja
+  name: ninja
   version: "{{versions.ninja}}"
   vendor_source: https://github.com/ninja-build/ninja/archive/v{{version}}.{{extension}}
   description: |
-    Ninja version {{version}} is a small build system with a focus on speed.
-    URL https\://ninja-build.org. See the manual https\://ninja-build.org/manual.html
-    or doc/manual.asciidoc included in the distribution
+    Ninja is a small build system with a focus on speed.
+    URL https\://ninja-build.org. Manual https\://ninja-build.org/manual.html
+    or doc/manual.asciidoc included in the distribution.
   build:
     configure: export CXXFLAGS='-Wl,-rpath=/lib64'; ./configure.py
     configure_args: --bootstrap
-    pkgmake: echo built in configure stage 
+    pkgmake: echo built in configure stage
   install:
     makeinstall: >
       mkdir -p $(ROOT){{root}}/bin;
-      $(INSTALL) ninja $(ROOT){{root}}/bin 
+      $(INSTALL) ninja $(ROOT){{root}}/bin

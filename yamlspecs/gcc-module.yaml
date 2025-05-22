@@ -10,7 +10,7 @@
   version: "{{versions.compiler.version}}"
   pkgname: "{{name}}_{{version}}-module"
   description: |
-    Module file for system defined GCC.
+    System default GCC {{version}}.
     GCC version changes with systm RPMS updates
   root: "/usr"
   module:

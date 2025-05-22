@@ -1,6 +1,6 @@
 !include rcic-package.yaml
 ---
-- package: tk 
+- package: tk
   name: tk
   versions: !include versions.yaml
   version: "{{versions.tk}}"
@@ -9,15 +9,12 @@
   src_dir: "{{name}}{{version}}"
   parent: "{{pkg_defaults.app_path}}/tcl"
   description: |
-    Tk is a graphical user interface toolkit that takes developing desktop applications to a 
-    higher level than conventional approaches. Tk is the standard GUI not only for Tcl, but 
-    for many other dynamic languages, and can produce rich, native applications that run 
-    unchanged across Windows, Mac OS X, Linux and more
+    Tk is a graphical user interface toolkit. A standard GUI for Tcl.
   tcl: "{{pkg_defaults.app_path}}/tcl/{{version}}/lib"
   build:
-    configure: cd unix; ./configure --enable-shared --enable-64bit --enable-threads --with-tcl={{tcl}} --prefix={{root}} 
+    configure: cd unix; ./configure --enable-shared --enable-64bit --enable-threads --with-tcl={{tcl}} --prefix={{root}}
     modules: tcl/{{version}}
-    target: 
+    target:
   install:
     makeinstall: cd unix; $(MAKE) DESTDIR=$(ROOT) install
   requires:

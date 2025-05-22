@@ -1,7 +1,7 @@
 !include rcic-package.yaml
 !include rcic-module.yaml
 ---
-- package: intel-oneapi compiler module 
+- package: intel-oneapi compiler module
   category: COMPILERS
   name: intel
   versions: !include versions.yaml
@@ -10,19 +10,17 @@
   tbbversion: "{{versions.oneAPI.tbbversion}}"
   vendor_source: https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html
   description: |
-      Intel (R) oneAPI Base and oneAPI HPC Toolkits version {{versions.oneAPI.version}}
-      products will deliver the tools needed to deploy applications
-      and solutions across SVMS architectures. Its set of complementary
-      toolkits - a base kit and specialty add-ons - simplify programming
-      and help developers improve efficiency and innovation.
-      Provides Fortran, C, C++ compilers. Specific tools versions vary.
+      Intel (R) oneAPI compiler. Base and HPC Toolkits version {{versions.oneAPI.version}}.
+      Deliver the tools needed to deploy applications and solutions
+      across SVMS architectures. Provides Fortran, C, C++ compilers.
+      Specific tools versions vary.
   root: "{{versions.oneAPI.nfspath}}/intel/oneAPI/{{version}}"
   toolpath: "{{root}}/compiler/{{toolversion}}"
   toolpath_full: "{{root}}/compiler/{{toolversion}}/linux"
   tbbpath: "{{root}}/tbb/{{tbbversion}}"
   mklpath: "{{root}}/mkl/{{toolversion}}"
   module:
-    setenv: 
+    setenv:
       - CMPLR_ROOT {{root}}/compiler/{{toolversion}}
       - TBBROOT {{tbbpath}}
       - MKLROOT {{mklpath}}

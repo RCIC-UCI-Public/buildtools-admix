@@ -4,18 +4,18 @@
 !include rcic-package.yaml
 !include rpm.yaml
 ---
-- package: nodejs 
-  name: nodejs 
+- package: nodejs
+  name: nodejs
   conflicts: "npm nodejs nodejs-full-i18n"
   versions: !include versions.yaml
   version: "{{versions.nodejs}}"
   release: "{{versions.nodejs_rel}}"
-  extension: tar.xz 
+  extension: tar.xz
   tardir: "node-v{{version}}-linux-x64"
   vendor_source: https://nodejs.org/dist/v{{version}}/{{tardir}}.{{extension}}
   description: |
-    Node.js {{version}} is an asynchronous event-driven JavaScript runtime, 
-    Node.js is designed to build scalable network applications. 
+    Node.js is an asynchronous event-driven JavaScript runtime.
+    Designed to build scalable network applications.
   pkgname: "{{name}}_{{version}}"
   root: /usr
   no_src_dir: True

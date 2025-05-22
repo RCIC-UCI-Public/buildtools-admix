@@ -1,6 +1,6 @@
 !include rcic-package.yaml
 ---
-- package: pymodule 
+- package: pymodule
   name: pymodule_skel
   versions: !include versions.yaml
   description: |
@@ -8,9 +8,9 @@
   pkgname: "python-{{name}}"
   root: "{{pkg_defaults.python_pkgs}}"
   build:
-    pkgmake: python ./setup.py  
+    pkgmake: python ./setup.py
     target: build
   install:
-    makeinstall: python ./setup.py install --root=$(ROOT) 
-  files: 
+    makeinstall: python ./setup.py install --root=$(ROOT)
+  files:
     - "{{root}}"

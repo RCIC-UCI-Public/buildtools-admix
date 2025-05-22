@@ -2,17 +2,16 @@
 !include rpm.yaml
 ---
 - package: bindfs is a FUSE filesystem for mirroring a directory to another directory
-  name: bindfs 
+  name: bindfs
   pkgname: "{{name}}"
   versions: !include versions.yaml
   version: "{{versions.bindfs}}"
   root: "/usr"
-
   vendor_source: https://github.com/mpartel/bindfs/archive/refs/tags/{{version}}.{{extension}}
   description: |
-       bindfs is a FUSE filesystem for mirroring a directory to another directory, similarly to mount --bind. 
-       The permissions of the mirrored directory can be altered in various ways.
-       See. https://bindfs.org/
+     Bindfs is a FUSE filesystem for mirroring a directory to another directory.
+     Similar to mount --bind. The permissions of the mirrored directory can be
+     altered in various ways. See. https://bindfs.org/
   build:
     preconfigure: ./autogen.sh
     configure: ./configure

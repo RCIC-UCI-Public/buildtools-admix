@@ -16,12 +16,12 @@ inteltbb:
   sep: "_"
   postfix: "oss"
   intel64: "4.7"
-icu: 
+icu:
   version: "65.1"
   tarversion: "65-1"
 nodejs: "17.3.0"
 nodejs_rel: "4"
-intel_compiler: 
+intel_compiler:
   shortversion: "2020u1"
   longversion: "2020.1.217"
   arch: "intel64"

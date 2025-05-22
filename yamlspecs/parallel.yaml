@@ -1,20 +1,19 @@
 !include rcic-package.yaml
 !include rpm.yaml
 ---
-- package: GNU parallel shell tool international components for unicode 
-  name: parallel 
+- package: GNU parallel shell tool international components for unicode
+  name: parallel
   versions: !include versions.yaml
   version: "{{versions.parallel}}"
   extension: tar.bz2
   vendor_source: wget https://ftp.gnu.org/gnu/parallel/{{name}}-{{version}}.{{extension}}
   description: |
-    GNU parallel is a shell tool for executing
-    jobs in parallel using one or more computers. 
+    GNU parallel is a shell tool for executing jobs in parallel.
   build:
     configure: ./configure
-    configure_args: > 
+    configure_args: >
       --prefix={{root}}
-    target: 
+    target:
   install:
     makeinstall: >
        mkdir -p $(ROOT){{root}};

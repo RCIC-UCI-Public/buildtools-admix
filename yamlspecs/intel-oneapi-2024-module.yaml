@@ -10,7 +10,7 @@
   tbbpath: "{{root}}/tbb/{{tbbversion}}"
   mklpath: "{{root}}/mkl/{{toolversion}}"
   module:
-    setenv: 
+    setenv:
       - ONEAPI_ROOT {{root}}
       - CMPLR_ROOT {{toolpath}}
       - TBBROOT {{tbbpath}}
@@ -59,12 +59,12 @@
   provides:
     - "{{name}}/{{version}}"
     - "{{name}}_{{version}}"
-    - libarcher.so 
-    - libicaf.so 
-    - libomp5.so 
+    - libarcher.so
+    - libicaf.so
+    - libomp5.so
     - libistrconv.so
-    - libomptarget.so 
-    - libirc.so 
+    - libomptarget.so
+    - libirc.so
     - libsvml.so()(64bit)
     - libirng.so()(64bit)
     - libimf.so()(64bit)

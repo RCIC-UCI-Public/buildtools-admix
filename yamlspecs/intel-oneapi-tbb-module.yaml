@@ -6,9 +6,10 @@
   vendor_source:
   versions: !include versions.yaml
   description: |
-    Intel Threading Building Blocks {{version}}. Threading Building Blocks (TBB) lets you easily
-    write parallel C++ programs that take full advantage of multicore performance, that are portable,
-    composable and have future-proof scalability. This version of TBB is from OneAPI version {{oneapiversion}}.
+    Intel Threading Building Blocks (TBB) {{version}}. TBB lets you easily
+    write parallel C++ programs that take full advantage of multicore
+    performance, that are portable, composable and have future-proof
+    scalability. This version of TBB is from Intel OneAPI {{oneapiversion}}.
   oneapiversion: "{{versions.oneAPI.version}}"
   toolversion: "{{versions.oneAPI.toolversion}}"
   tbbversion: "{{versions.oneAPI.tbbversion}}"

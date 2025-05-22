@@ -6,6 +6,6 @@
   release: 2
   module:
     setenv:
-    prepend_path: 
+    prepend_path:
       - PATH {{root}}/bin
       - MANPATH {{root}}/share/man

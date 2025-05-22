@@ -1,18 +1,18 @@
 !include rcic-package.yaml
 !include rpm.yaml
 ---
-- package: go 
-  name: go 
+- package: go
+  name: go
   versions: !include versions.yaml
   version: "{{versions.go}}"
   vendor_source: https://dl.google.com/go/{{name}}{{version}}.linux-amd64.{{extension}}
   description: |
-    Google {{name}} is an open source programming language and compiler that
-    makes it easy to build simple, reliable, and efficient software
+    Google {{name}} is an open source programming language and compiler.
+    It makes it easy to build simple, reliable, and efficient software.
   src_tarball: "{{name}}{{version}}.linux-amd64.{{extension}}"
   no_src_dir: True
   install:
-    makeinstall: 
+    makeinstall:
        zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf -  --strip 1)
   rpm:
     extras: *RpmNone

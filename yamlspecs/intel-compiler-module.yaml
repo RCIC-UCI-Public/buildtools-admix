@@ -3,22 +3,22 @@
 !include rcic-package.yaml
 !include rcic-module.yaml
 ---
-- package: intel compiler module 
+- package: intel compiler module
   category: COMPILERS
-  name: intel 
+  name: intel
   versions: !include versions.yaml
   version: "{{versions.intel_compiler.shortversion}}"
   intelarch: "{{versions.intel_compiler.arch}}"
   release: "2"
   description: |
-      Intel Studio XE Compilers(R) version {{version}}. 
-      Provides Fortran, C, C++ compilers 
+      Intel Studio XE Compilers(R) version {{version}}.
+      Provides Fortran, C, C++ compilers
   root: "/data/opt/apps/intel/{{version}}"
   toolpath: "{{root}}/compilers_and_libraries/linux"
   toolpath_full: "{{root}}/compilers_and_libraries_{{versions.intel_compiler.longversion}}/linux"
   shortname: INTEL{{version}}
   module:
-    setenv:  
+    setenv:
       - "{{shortname}} {{toolpath}}"
       - "{{shortname}}__PREFIX {{toolpath}}"
       - "{{shortname}}__CPPFLAGS -I{{toolpath}}/include"

@@ -8,9 +8,9 @@
   extension: tgz
   vendor_source: https://github.com/oneapi-src/oneTBB/releases/download/v{{version}}/{{version_full}}-lin.{{extension}}
   description: |
-    Intel Threading Building Blocks {{version}}. Threading Building Blocks (TBB) lets you easily 
-    write parallel C++ programs that take full advantage of multicore performance, that are portable,
-    composable and have future-proof scalability.
+    Intel Threading Building Blocks (TBB) {{version}}. TBB lets you easily 
+    write parallel C++ programs that take full advantage of multicore
+    performance, that are portable, composable and have future-proof scalability.
     Environment Vars: INTELTBB_HOME = {{root}}
   no_src_dir: True
   tardir: "{{version_full}}"

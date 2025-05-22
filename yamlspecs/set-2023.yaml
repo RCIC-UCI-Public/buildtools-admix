@@ -2,7 +2,7 @@
 ---
 versions: versions-2023.yaml
 systemadd:
-  - libseccomp-devel 
+  - libseccomp-devel
   - crun
 bootstrap:
   - go
