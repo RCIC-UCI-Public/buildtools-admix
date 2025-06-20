@@ -12,8 +12,8 @@
   compiler: "{{versions.compiler.name}}"
   compiler_version: "{{versions.compiler.version}}"
   description: |
-    Module file for system defined Openmpi version {{version}} compiled
-    with GCC version {{compiler_version}}. Changes with major OS version changes
+    System default Openmpi version {{version}}. Compiled with 
+    GCC version {{compiler_version}}. Changes when major OS version changes
   root: "/usr"
   module:
     <<: *ModuleCompiler
