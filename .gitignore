@@ -1,3 +1,4 @@
+00STAGE*/
 sources/
 BUILD/
 RPMS/
@@ -10,4 +11,3 @@ yum.*
 yamlspecs/*.pkg
 .rpmmacros
 .wget-hsts
-
