@@ -1,0 +1,23 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: Apptainer Container Runtime
+  name: apptainer
+  versions: !include versions.yaml
+  version: "{{versions.apptainer}}"
+  vendor_source: https://github.com/apptainer/apptainer/releases/download/v{{version}}/{{name}}-{{version}}.{{extension}}
+  description: |
+    Apptainer is an open source container platform designed to be simple, fast, and secure. Apptainer is designed 
+    for ease-of-use on shared systems and in high performance computing (HPC) environments.
+    Built with go version {{versions.go}}
+  build:
+    configure: >
+       ./mconfig
+    configure_args: --prefix={{root}}
+    target: -C builddir
+    modules: go/{{versions.go}}
+  install:
+    makeinstall: make DESTDIR=$(ROOT) -C builddir install
+    installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{root}}
+  requires:
+    - squashfs-tools

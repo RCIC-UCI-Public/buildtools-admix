@@ -1,0 +1,8 @@
+!include apptainer.yaml
+!include rcic-module.yaml
+---
+- package: Apptainer Module
+  category: TOOLS
+  release: 1
+  module:
+    prereq:

@@ -1,10 +1,17 @@
 !include packages.yaml
 ---
 versions: versions-2025.yaml
+enablerepo: "epel"
 systemadd:
   - libseccomp-devel
   - crun
+  - fakeroot
+  - cryptsetup
 bootstrap:
+  - go
+  - go-module
 build:
+  - apptainer
+  - apptainer-module
   - intel-oneapi-2025-module
   - intel-oneapi-tbb-module

@@ -31,3 +31,5 @@ c0b39634f3611f77c81aabfc4e34b78f912a06c8  sources/node-v21.4.0-linux-x64.tar.xz
 7cf72aa27d1a7791e035060031aebfdcf0a10e5a  sources/cmake-3.30.2.tar.gz
 8d2e8c1c070c27fb9dc46b4a6345bbb1de7ccbaf  sources/ninja-1.10.2.tar.gz
 ce298cbdcb5df754d2eb4a21c7d4ca813ab4f084  sources/curl-7.81.0.tar.gz
+da59a1772abfd81192a7ddb29d4962e0394d1c71  sources/apptainer-1.4.5.tar.gz
+c2a9ec0db3857a9bf8925cf8dc6c6f12b4387696  sources/go1.25.5.linux-amd64.tar.gz

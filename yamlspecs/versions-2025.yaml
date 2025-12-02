@@ -6,3 +6,6 @@ oneAPI:
   toolversion: "2025.1"
   tbbversion: "2022.1"
   umfversion: "0.10"
+
+apptainer: "1.4.5"
+go: "1.25.5"
