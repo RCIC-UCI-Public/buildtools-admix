@@ -1,4 +1,3 @@
-ls -l RPMS/*/ | grep rpm | awk '{printf "%-15.f %s\n", int($5/100)*100, $9}'
 34699500        apptainer_1.4.5-1.4.5-1.x86_64.rpm
 7900            apptainer_1.4.5-module-1.4.5-1.x86_64.rpm
 38700           bindfs-1.17.7-1.x86_64.rpm
