@@ -1,0 +1,4 @@
+!include versions.yaml
+---
+cmake: "4.2.3"
+cmake_major: "v4.2"
