@@ -35,7 +35,9 @@ manifest:
   - "{{bootstrap}}"
   - "{{build}}"
 
-parallel: 5
+parallel:
+  sets: 3
+
 sets:
   - base
   - centos8
