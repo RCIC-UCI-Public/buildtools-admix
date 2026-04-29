@@ -1,5 +1,0 @@
-!include protobuf-classic.yaml
-!include rcic-module.yaml
----
-- package: protobuf module
-  category: TOOLS

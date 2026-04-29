@@ -1,6 +1,0 @@
-!include likwid.yaml
-!include rcic-module.yaml
----
-- package: likwid module
-  category: TOOLS
-  release: 2

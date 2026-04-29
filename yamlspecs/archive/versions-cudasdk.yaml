@@ -1,5 +1,0 @@
-!include versions.yaml
----
-nfspath: /data/opt/apps
-cudasdk: "22.9"
-
