@@ -22,7 +22,7 @@ system:
   - openssl-devel
   - libssh-devel
   - libcurl-devel
-  - !eval "'hwloc-devel' if int({{site.os_release}}) >= 10 else ''"
+  - !eval "'hwloc-devel' if int({{site.os_release}}) >= 9 else ''"
   - glibc-static
   - libstdc++-static
   - "{{systemadd}}"
