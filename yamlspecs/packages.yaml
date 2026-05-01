@@ -17,12 +17,12 @@ system:
   - gcc
   - gcc-c++
   - gcc-gfortran
-  - pcre-devel
+  - !eval "'pcre2-devel' if int({{site.os_release}}) >= 10 else 'pcre-devel'"
   - zlib-devel
   - openssl-devel
   - libssh-devel
   - libcurl-devel
-  - !ifeq "{{site.os_release}},9,hwloc-devel,"
+  - !eval "'hwloc-devel' if int({{site.os_release}}) >= 10 else ''"
   - glibc-static
   - libstdc++-static
   - "{{systemadd}}"
