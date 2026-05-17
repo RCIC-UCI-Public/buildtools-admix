@@ -6,8 +6,8 @@ bootstrap:
   - tcl
   - tcl-module
 build:
-  - java8-module
-  - java11-module
+  - !eval "'java8-module' if int({{site.os_release}}) < 10 else ''"
+  - !eval "'java11-module' if int({{site.os_release}}) < 10 else ''"
   - intel-compiler-module
   - openmpi-module
   - intel-tbb
@@ -16,3 +16,5 @@ build:
   - singularity-module
   - bindfs
   - tk
+  - !eval "'java' if int({{site.os_release}}) >= 10 else ''"
+  - !eval "'java-module' if int({{site.os_release}}) >= 10 else ''"

@@ -28,3 +28,11 @@ intel_compiler:
 go: "1.17.7"
 bindfs: "1.17.7"
 singularity: "3.7.2"
+
+# for compiled JDK on Rocky 10
+javajdk:
+  version: "11"
+  distro: jdk-11.0.32+2
+  srcdir: jdk11u-jdk-11.0.32-2
+  bootjdk: openjdk-11.0.0.2_linux-x64.tar.gz
+  bootjdkdir: jdk-11.0.0.2

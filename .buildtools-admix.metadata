@@ -34,3 +34,7 @@ ce298cbdcb5df754d2eb4a21c7d4ca813ab4f084  sources/curl-7.81.0.tar.gz
 da59a1772abfd81192a7ddb29d4962e0394d1c71  sources/apptainer-1.4.5.tar.gz
 c2a9ec0db3857a9bf8925cf8dc6c6f12b4387696  sources/go1.25.5.linux-amd64.tar.gz
 86cbe4566dc17829af4302bfc2241435ff881b1b  sources/cmake-4.2.3.tar.gz
+8bed6d1e4e1a0fce618bdaaf6096c9692b7ec55f  sources/java-11.tar.gz
+cf135f6471195389271b8be78aa45c9760249c32  sources/java-17.tar.gz
+25abf4ef393a0cea9a6d112ce50c28d1a61928bc  sources/openjdk-11.0.0.2_linux-x64.tar.gz
+8dd7d78d5d3fc5ba3c5e9d02710afcb66a2a79dc  sources/openjdk-17.0.2_linux-x64_bin.tar.gz

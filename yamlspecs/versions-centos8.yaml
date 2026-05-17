@@ -18,3 +18,11 @@ oneAPI:
   tbbversion: "2021.6.0"
 cmake: "3.20.5"
 cmake_major: "v3.20"
+
+# for compiled JDK on Rocky 10
+javajdk:
+  version: "17"
+  distro: jdk-17.0.20+2
+  srcdir: jdk17u-jdk-17.0.20-2
+  bootjdk: openjdk-17.0.2_linux-x64_bin.tar.gz
+  bootjdkdir: jdk-17.0.2

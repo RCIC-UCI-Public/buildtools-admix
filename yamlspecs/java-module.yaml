@@ -1,0 +1,12 @@
+# java module for a compiled version of Java JDK for Rocky 10
+!include java.yaml
+!include rcic-module.yaml
+---
+- package: java openjdk module 
+  category: LANGUAGES
+  pkgname: "{{name}}{{version}}-module"
+  module:
+    prepend_path:
+      - PATH {{root}}/bin
+    setenv: 
+      - JAVA_HOME {{root}}

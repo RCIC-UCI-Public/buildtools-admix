@@ -5,7 +5,7 @@ bootstrap:
   - tcl
   - tcl-module
 build:
-  - java17-module
+  - !eval "'java17-module' if int({{site.os_release}}) < 10 else ''"
   - tk
   - parallel
   - parallel-module
@@ -14,3 +14,5 @@ build:
   - singularity-module
   - cmake
   - cmake-module
+  - !eval "'java' if int({{site.os_release}}) >= 10 else ''"
+  - !eval "'java-module' if int({{site.os_release}}) >= 10 else ''"

@@ -1,0 +1,28 @@
+!include common.yaml
+---
+- package: compiled java jdk
+  name: java
+  versions: !include versions.yaml
+  version: "{{versions.javajdk.version}}"
+  distro: "{{versions.javajdk.distro}}"
+  vendor_source: https://github.com/openjdk/jdk{{version}}u/archive/refs/tags/{{distro}}.{{extension}}
+  src_dir: "{{versions.javajdk.srcdir}}"
+  description: |
+    A replacement for java-{{version}}-openjdk for Rocky 10.
+    Provides the official Reference Implementation for Java SE {{version}},
+    based on open-source code from the JDK {{version}} Project in the OpenJDK Community
+  build:
+    preconfigure: >
+      tar xzf $(REDHAT.ROOT)/sources/{{versions.javajdk.bootjdk}}
+    configure: bash configure 
+    configure_args: --prefix={{root}} --with-boot-jdk={{versions.javajdk.bootjdkdir}} --disable-warnings-as-errors
+    pkgmake: unset CFLAGS CXXFLAGS LDFLAGS RCICMODULEPATH MODULEPATH; make all
+  install:
+    bind: !eval "'bindfs' if {{versions.os_release}} >= 9 else 'mount --bind'"
+    makeinstall: >
+      mkdir -p $(ROOT)/{{root}};
+      mkdir -p {{root}};
+      {{install.bind}} $(ROOT)/{{root}} {{root}};
+      unset CFLAGS CXXFLAGS LDFLAGS RCICMODULEPATH MODULEPATH; make install;
+      umount {{root}}
+  rpmBuildIdLinks: none
