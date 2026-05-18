@@ -60,8 +60,9 @@ manifest:
 parallel:
   sets: 3
 
-sets:
+serialsets:
   - base
+sets:
   - centos8
   - "2023"
   - "2024"
