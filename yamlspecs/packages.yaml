@@ -1,5 +1,12 @@
 ---
 site: !include site.yaml
+
+# Rocky 10 and above, need older versions of Java to be built for other admixes
+# Prior to 10, these these were available as system-supplied packages
+java_os_10:
+  - java
+  - java-module 
+
 system:
   - openmpi
   - openmpi-devel
