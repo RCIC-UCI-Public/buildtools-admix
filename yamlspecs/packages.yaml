@@ -1,5 +1,27 @@
 ---
 site: !include site.yaml
+
+# Rocky 10 and above, need older versions of Java to be built for other admixes
+# Prior to 10, these these were available as system-supplied packages
+java_os_10:
+  - java
+  - java-module 
+
+# Since we are building java, the following RPMs might be required to get a full
+# 'reconstruction' of the Rocky 9 openjdk RPMs
+system_10:
+  - systemtap-sdt-devel
+  - nss-devel
+  - libXtst-devel
+  - libXt-devel
+  - libXrandr-devel
+  - libXinerama-devel
+  - libXi-devel
+  - fontconfig-devel
+  - desktop-file-utils
+  - cups-devel
+  - alsa-lib-devel
+
 system:
   - openmpi
   - openmpi-devel
@@ -25,6 +47,7 @@ system:
   - !eval "'hwloc-devel' if int({{site.os_release}}) >= 9 else ''"
   - glibc-static
   - libstdc++-static
+  - !eval "'{{system_10}}' if int({{site.os_release}}) >= 10 else ''"
   - "{{systemadd}}"
   - !eval "'{{systemadd10}}' if int({{site.os_release}}) >= 10 else ''"
 systemadd:
