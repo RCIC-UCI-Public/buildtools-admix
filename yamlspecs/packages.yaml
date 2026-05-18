@@ -63,6 +63,7 @@ parallel:
 serialsets:
   - base
 sets:
+  - '{{serialsets}}' 
   - centos8
   - "2023"
   - "2024"
