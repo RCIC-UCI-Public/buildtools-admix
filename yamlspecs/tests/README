@@ -1,0 +1,17 @@
+A very simple test of compiled java JDK
+
+module load java/11
+java -version
+javac -version
+
+1. Create test java program
+   vim Test.java
+
+2. Compile it 
+   javac Test.java 
+   ls
+   Test.class Test Java
+
+3. java Test
+  
+4. javap -verbose Test | grep "major"
