@@ -5,6 +5,7 @@ bootstrap:
   - gcc-module
   - tcl
   - tcl-module
+  - bindfs
 build:
   - !eval "'java8-module java11-module' if int({{site.os_release}}) < 10 else '{{java_os_10}}'"
   - intel-compiler-module
@@ -13,5 +14,4 @@ build:
   - intel-tbb-module
   - singularity
   - singularity-module
-  - bindfs
   - tk
