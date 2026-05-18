@@ -26,7 +26,18 @@ system:
   - glibc-static
   - libstdc++-static
   - "{{systemadd}}"
+  - !eval "'{{systemadd10}}' if int({{site.os_release}}) >= 10 else ''"
 systemadd:
+# this are needed for compiling Java 11 and 17 on Rocky 10
+systemadd10:
+  - libXtst-devel 
+  - libXt-devel
+  - libXrender-devel
+  - libXrandr-devel
+  - libXi-devel
+  - cups-devel
+  - fontconfig-devel
+  - alsa-lib-devel
 bootstrap:
   - go
   - go-module
