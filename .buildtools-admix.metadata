@@ -38,3 +38,4 @@ c2a9ec0db3857a9bf8925cf8dc6c6f12b4387696  sources/go1.25.5.linux-amd64.tar.gz
 cf135f6471195389271b8be78aa45c9760249c32  sources/java-17.tar.gz
 25abf4ef393a0cea9a6d112ce50c28d1a61928bc  sources/openjdk-11.0.0.2_linux-x64.tar.gz
 8dd7d78d5d3fc5ba3c5e9d02710afcb66a2a79dc  sources/openjdk-17.0.2_linux-x64_bin.tar.gz
+1c5f6dea2c322936d54e15c414114a2ee19f1cdb  sources/rclone-v1.70.3-linux-amd64.zip

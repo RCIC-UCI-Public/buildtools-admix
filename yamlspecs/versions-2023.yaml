@@ -6,3 +6,6 @@ nodejs: "21.4.0"
 nodejs_rel: "2"
 nfspath: /data/opt/apps
 cudasdk: "22.9"
+rclone:
+  version: "1.70.3"
+  arch: "linux-amd64"

@@ -1,0 +1,30 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: Rclone
+  name: rclone
+  pkgname: "{{name}}"
+  release: 2
+  versions: !include versions.yaml
+  version: "{{versions.rclone.version}}"
+  rclonearch: "{{versions.rclone.arch}}"
+  extension: "zip"
+  vendor_source: https://downloads.rclone.org/v{{version}}/rclone-v{{version}}-{{rclonearch}}.{{extension}}
+  src_dir: "rclone-v{{version}}-{{rclonearch}}"
+  tarname: "{{src_dir}}"
+  src_tarball: "{{tarname}}.{{extension}}"
+  root: /usr
+  description: |
+     Rclone is a command line program to sync files and directories to and from
+     different cloud storage providers.
+  build:
+    pkgmake: "echo prebuilt binary from rclone.org"
+  install:
+    makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       mkdir -p $(ROOT){{root}}/share/man/man1;
+       install -m 755 rclone $(ROOT){{root}}/bin;
+       install -m 644 rclone.1 $(ROOT){{root}}/share/man/man1
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/share/man/man1/*"
