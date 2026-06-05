@@ -36,3 +36,4 @@ javajdk:
   srcdir: jdk11u-jdk-11.0.32-2
   bootjdk: openjdk-11.0.0.2_linux-x64.tar.gz
   bootjdkdir: jdk-11.0.0.2
+  jvmpath: openjdk-11.0.32-internal

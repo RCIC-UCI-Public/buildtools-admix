@@ -6,8 +6,9 @@
   category: LANGUAGES
   pkgname: "{{name}}{{version}}-module"
   release: 3
+  jvmpath: "{{root}}/jvm/{{versions.javajdk.jvmpath}}"
   module:
     prepend_path:
       - PATH {{root}}/bin
     setenv: 
-      - JAVA_HOME {{root}}
+      - JAVA_HOME {{jvmpath}}

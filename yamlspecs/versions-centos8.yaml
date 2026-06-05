@@ -26,3 +26,4 @@ javajdk:
   srcdir: jdk17u-jdk-17.0.20-2
   bootjdk: openjdk-17.0.2_linux-x64_bin.tar.gz
   bootjdkdir: jdk-17.0.2
+  jvmpath: openjdk-17.0.20-internal
