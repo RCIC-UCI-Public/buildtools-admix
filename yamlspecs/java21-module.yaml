@@ -1,0 +1,5 @@
+# module for the system java-21-openjdk
+!include javacommon.yaml
+---
+- name_ver: java21
+  version: "{{versions.java21}}"

@@ -2,3 +2,5 @@
 ---
 cmake: "4.2.3"
 cmake_major: "v4.2"
+java21: "21"
+java25: "25"

@@ -2,6 +2,9 @@
 ---
 versions: versions-2026.yaml
 enablerepo: "epel"
+systemadd10:
+  - java-21-openjdk-devel
+  - java-25-openjdk-devel
 systemadd:
   - libseccomp-devel
   - crun
@@ -11,3 +14,5 @@ bootstrap:
 build:
   - cmake
   - cmake-module
+  - !OScmp ">=,10,java21-module,"
+  - !OScmp ">=,10,java25-module,"
