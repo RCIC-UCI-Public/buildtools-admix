@@ -7,10 +7,10 @@ bootstrap:
   - tcl-module
   - bindfs
 build:
-  - !eval "'java8-module java11-module' if int({{site.os_release}}) < 10 else '{{java_os_10}}'"
+  - !OScmp "<,10,java8-module java11-module,{{java_os_10}}"
   - intel-compiler-module
   - openmpi-module
-  - !eval "'intel-tbb intel-tbb-module' if int({{site.os_release}}) < 10 else ''"
+  - !OScmp "<,10,intel-tbb intel-tbb-module,"
   - singularity
   - singularity-module
   - tk

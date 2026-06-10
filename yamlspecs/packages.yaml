@@ -1,12 +1,9 @@
 ---
-site: !include site.yaml
-
 # Rocky 10 and above, need older versions of Java to be built for other admixes
 # Prior to 10, these these were available as system-supplied packages
 java_os_10:
   - java
   - java-module 
-
 system:
   - openmpi
   - openmpi-devel
@@ -24,18 +21,17 @@ system:
   - gcc
   - gcc-c++
   - gcc-gfortran
-  - !eval "'pcre2-devel' if int({{site.os_release}}) >= 10 else 'pcre-devel'"
+  - !OScmp ">=,10,pcre2-devel,pcre-devel"
   - zlib-devel
   - openssl-devel
   - libssh-devel
   - libcurl-devel
-  - !eval "'hwloc-devel' if int({{site.os_release}}) >= 9 else ''"
+  - !OScmp ">=,9,hwloc-devel,"
   - glibc-static
   - libstdc++-static
   - "{{systemadd}}"
-  - !eval "'{{systemadd10}}' if int({{site.os_release}}) >= 10 else ''"
+  - !OScmp ">=,10,{{systemadd10}},"
 systemadd:
-
 # Since we are building java, the following RPMs might be required to get a full
 # 'reconstruction' of the Rocky 9 openjdk RPMs
 # this are needed for compiling Java 11 and 17 on Rocky 10
@@ -48,7 +44,6 @@ systemadd10:
   - cups-devel
   - fontconfig-devel
   - alsa-lib-devel
-
 bootstrap:
   - go
   - go-module
@@ -56,10 +51,8 @@ build:
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
-
 parallel:
   sets: 3
-
 serialsets:
   - base
 sets:

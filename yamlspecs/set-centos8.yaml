@@ -5,7 +5,7 @@ bootstrap:
   - tcl
   - tcl-module
 build:
-  - !eval "'java17-module' if int({{site.os_release}}) < 10 else '{{java_os_10}}'"
+  - !OScmp "<,10,java17-module,{{java_os_10}}"
   - tk
   - parallel
   - parallel-module
