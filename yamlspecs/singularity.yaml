@@ -9,9 +9,10 @@
   description: |
     Singularity container runtime. Built with go version {{versions.go}}
   build:
+    suppress_error: !OScmp ">=,10,-Wno-error=stringop-overread,"
     configure: >
        if [ -d third_party ]; then git clone --recurse-submodules https://github.com/containers/conmon third_party/conmon; fi;
-       ./mconfig
+       CFLAGS+=' {{build.suppress_error}}' ./mconfig
     configure_args: --prefix={{root}}
     target: -C builddir
     modules: go/{{versions.go}}
