@@ -12,7 +12,7 @@
     compiler independent configuration files, and generate native
     makefiles and workspaces that can be used in the compiler
     environment of your choice.
-  fpie:  !eval "'' if int({{versions.os_release}}) < 10 else '-fPIE'"
+  fpie:  !OScmp ">=,10,-fPIE,"
   build:
     configure: export CXXFLAGS='-Wl,-rpath=/lib64 {{fpie}}'; ./bootstrap --prefix={{root}}
     pkgmake: make -j 8

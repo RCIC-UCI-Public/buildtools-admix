@@ -18,7 +18,7 @@
     configure_args: --prefix={{root}} --with-boot-jdk={{versions.javajdk.bootjdkdir}} --disable-warnings-as-errors
     pkgmake: unset CFLAGS CXXFLAGS LDFLAGS RCICMODULEPATH MODULEPATH; make all
   install:
-    bind: !eval "'bindfs' if {{versions.os_release}} >= 9 else 'mount --bind'"
+    bind: !OScmp ">=,9,bindfs,mount --bind"
     makeinstall: >
       mkdir -p $(ROOT)/{{root}};
       mkdir -p {{root}};
