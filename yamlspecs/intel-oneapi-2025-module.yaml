@@ -7,6 +7,7 @@
   umfpath: "{{root}}/umf/{{versions.oneAPI.umfversion}}"
   tbbpath: "{{root}}/tbb/{{versions.oneAPI.tbbversion}}"
   mklpath: "{{root}}/mkl/{{versions.oneAPI.toolversion}}"
+  release: 2
   module:
     setenv:
       - ONEAPI_ROOT {{root}}
@@ -50,6 +51,7 @@
       - OCL_ICD_FILENAMES {{toolpath}}/lib/libintelocl.so
       - PATH {{toolpath}}/bin
       - PATH {{mklpath}}/bin
+      - PATH {{root}}/{{versions.oneAPI.toolversion}}/bin
       - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
       - PKG_CONFIG_PATH {{toolpath}}/lib/pkgconfig
       - PKG_CONFIG_PATH {{mklpath}}/lib/pkgconfig
