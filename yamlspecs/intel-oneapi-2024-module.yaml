@@ -1,6 +1,7 @@
 !include intel-oneapi-module.yaml
 ---
 - versions: !include versions.yaml
+  release: 2
   version: "{{versions.oneAPI.version}}"
   toolversion: "{{versions.oneAPI.toolversion}}"
   tbbversion: "{{versions.oneAPI.tbbversion}}"
@@ -53,6 +54,7 @@
       - PATH {{oclfpgspath}}/bin
       - PATH {{toolpath}}/bin
       - PATH {{mklpath}}/bin
+      - PATH {{root}}/{{versions.oneAPI.toolversion}}/bin
       - PKG_CONFIG_PATH {{tbbpath}}/lib/pkgconfig
       - PKG_CONFIG_PATH {{toolpath}}/lib/pkgconfig
       - PKG_CONFIG_PATH {{mklpath}}/lib/pkgconfig

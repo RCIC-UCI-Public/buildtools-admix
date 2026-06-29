@@ -2,6 +2,7 @@
 !include rcic-module.yaml
 ---
 - package: intel-oneapi compiler module
+  release: 2
   category: COMPILERS
   name: intel
   versions: !include versions.yaml
@@ -49,6 +50,7 @@
       - LD_LIBRARY_PATH {{toolpath_full}}/lib
       - PATH {{toolpath_full}}/bin
       - PATH {{toolpath_full}}/bin/intel64
+      - PATH {{root}}/mpi/{{tbbversion}}/bin
       - -d " " LDFLAGS -L{{toolpath_full}}/compiler/lib/intel64_lin -Wl,-rpath,{{toolpath_full}}/compiler/lib/intel64_lin
       - -d " " LDFLAGS -L{{tbbpath}}/lib/intel64 -Wl,-rpath,{{tbbpath}}/lib/intel64
       - -d " " LDFLAGS -L{{mklpath}}/lib/intel64 -Wl,-rpath,{{mklpath}}/lib/intel64
